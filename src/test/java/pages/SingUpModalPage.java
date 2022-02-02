@@ -10,24 +10,11 @@ import org.openqa.selenium.WebElement;
 
 @Log4j2
 public class SingUpModalPage extends BasePage {
-
-    public static final By ROBOT = By.xpath("//iframe");
-    public static final By ROBOT_CHECKBOX = By.xpath("//span[@id='recaptcha-anchor']");
     public static final By CHECKBOX = By.id("Agree");
     public static final By SIGNUP_BUTTON = By.xpath("//input[@value='Sign Up']");
 
     public SingUpModalPage(WebDriver driver) {
         super(driver);
-    }
-
-    public SingUpPage create(Account account) {
-        new Input(driver, "Username").write(account.getUserName());
-        new Input(driver, "Password").write(account.getPassword());
-        new Input(driver, "Confirm Password").write(account.getPassword());
-        new Input(driver, "Email").write(account.getEmail());
-        clickRobot();
-        clickCheckBox();
-        return clickSingUp();
     }
 
     public SingUpPage createWithInvalidPassword(Account account) {
@@ -62,16 +49,6 @@ public class SingUpModalPage extends BasePage {
         new Input(driver, "Email").write("peteyeononnigmail.com");
         clickCheckBox();
         return clickSingUp();
-    }
-
-    @Step("Click on robot checkbox")
-    public SingUpPage clickRobot() {
-        WebElement iFrame = driver.findElement(ROBOT);
-        driver.switchTo().frame(iFrame);
-        WebElement iFrame_checkbox = driver.findElement(ROBOT_CHECKBOX);
-        iFrame_checkbox.click();
-        log.info("click on robot checkbox");
-        return new SingUpPage(driver);
     }
 
     @Step("Click on checkbox")

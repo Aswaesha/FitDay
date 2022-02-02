@@ -10,20 +10,6 @@ import static org.testng.Assert.assertTrue;
 
 @Log4j2
 public class SingUpTest extends BaseTest {
-    @Test(description = "Create my free FitDay account")
-    public void createMyFreeAccountPositive() {
-        log.info("Start createMyFreeAccountPositive test");
-        loginPage.open()
-                .clickCreateFreeAccountLink();
-
-        Account account = AccountFactory.get();
-
-        boolean isDetailsPageOpen = singUpModalPage
-                .create(account)
-                .isPageOpen();
-        assertTrue(isDetailsPageOpen, "Pages of registration is not open");
-    }
-
     @Test(description = "Input invalid user name")
     public void createMyFreeAccountWithInvalidName() {
         log.info("Start create my free account with invalid name test");
