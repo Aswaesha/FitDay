@@ -15,7 +15,6 @@ public class SingUpModalPage extends BasePage {
     public static final By ROBOT_CHECKBOX = By.xpath("//span[@id='recaptcha-anchor']");
     public static final By CHECKBOX = By.id("Agree");
     public static final By SIGNUP_BUTTON = By.xpath("//input[@value='Sign Up']");
-    public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
 
     public SingUpModalPage(WebDriver driver) {
         super(driver);
