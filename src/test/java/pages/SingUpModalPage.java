@@ -11,7 +11,8 @@ import org.openqa.selenium.WebElement;
 @Log4j2
 public class SingUpModalPage extends BasePage {
 
-    public static final By ROBOT_CHECKBOX = By.xpath("//span[@id='recaptcha-anchor']//div");
+    public static final By ROBOT = By.xpath("//iframe");
+    public static final By ROBOT_CHECKBOX = By.xpath("//span[@id='recaptcha-anchor']");
     public static final By CHECKBOX = By.id("Agree");
     public static final By SIGNUP_BUTTON = By.xpath("//input[@value='Sign Up']");
     public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
@@ -64,20 +65,20 @@ public class SingUpModalPage extends BasePage {
         return clickSingUp();
     }
 
-    @Step("Click on button Sing up")
+    @Step("Click on robot checkbox")
     public SingUpPage clickRobot() {
-        WebElement iFrame = driver.findElement(By.xpath("//iframe"));
+        WebElement iFrame = driver.findElement(ROBOT);
         driver.switchTo().frame(iFrame);
-        WebElement iFrame_checkbox = driver.findElement(By.xpath("//span[@id='recaptcha-anchor']"));
+        WebElement iFrame_checkbox = driver.findElement(ROBOT_CHECKBOX);
         iFrame_checkbox.click();
-        log.info("click on Sing up button");
+        log.info("click on robot checkbox");
         return new SingUpPage(driver);
     }
 
-    @Step("Click on button Sing up")
+    @Step("Click on checkbox")
     public SingUpPage clickCheckBox() {
         driver.findElement(CHECKBOX).click();
-        log.info("click on Sing up button");
+        log.info("click on checkbox");
         return new SingUpPage(driver);
     }
 
