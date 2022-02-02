@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.LoginPage;
-import pages.LogoPage;
-import pages.SingUpModalPage;
-import pages.SingUpPage;
+import pages.*;
 
 
 import java.util.concurrent.TimeUnit;
@@ -23,6 +20,7 @@ public class BaseTest {
     SingUpPage singUpPage;
     SingUpModalPage singUpModalPage;
     LogoPage logoPage;
+    SearchPage searchPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
@@ -39,6 +37,7 @@ public class BaseTest {
         singUpPage = new SingUpPage(driver);
         singUpModalPage = new SingUpModalPage(driver);
         logoPage = new LogoPage(driver);
+        searchPage = new SearchPage(driver);
 
 //        //private static final Cookie COOKIE = new Cookie("usprivacy", "1---", ".fitday.com");
 //        WebDriver driver = new ChromeDriver(options);
