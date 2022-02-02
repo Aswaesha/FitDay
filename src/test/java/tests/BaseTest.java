@@ -21,6 +21,7 @@ public class BaseTest {
     SingUpModalPage singUpModalPage;
     LogoPage logoPage;
     SearchPage searchPage;
+    MainPage mainPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
@@ -38,7 +39,7 @@ public class BaseTest {
         singUpModalPage = new SingUpModalPage(driver);
         logoPage = new LogoPage(driver);
         searchPage = new SearchPage(driver);
-
+        mainPage = new MainPage(driver);
 //        //private static final Cookie COOKIE = new Cookie("usprivacy", "1---", ".fitday.com");
 //        WebDriver driver = new ChromeDriver(options);
 //        driver.manage().addCookie(COOKIE);

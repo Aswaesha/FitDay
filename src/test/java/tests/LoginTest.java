@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .clickForgotLink();
 
-        assertTrue(driver.findElement(By.id("Username")).isDisplayed(), "Страница HomePage не открылась");
+        assertTrue(loginPage.checkoutInputAtPage(), "Страница HomePage не открылась");
     }
 
     @Test(description = "Check click on link Create My Free FitDay Account")
@@ -49,6 +49,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .clickCreateFreeAccountLink();
 
-        assertTrue(driver.findElement(By.xpath("//input[@value='Sign Up']")).isDisplayed(), "Страница Sing up не открылась");
+        assertTrue(loginPage.checkoutButtonSingUp(), "Страница Sing up не открылась");
     }
 }

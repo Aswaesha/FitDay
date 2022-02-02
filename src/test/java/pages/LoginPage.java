@@ -9,8 +9,10 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage extends BasePage{
 
     public static final By USERNAME_INPUT = By.id("username");
+    public static final By USER_INPUT = By.id("Username");
     public static final By PASSWORD_INPUT = By.xpath("//input[@type='password']");
     public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
+    public static final By SING_UP_BUTTON = By.xpath("//input[@value='Sign Up']");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
 
@@ -63,5 +65,15 @@ public class LoginPage extends BasePage{
     public void clickCreateFreeAccountLink() {
         driver.findElement(CREATE_LINK).click();
         log.info("click on Create free account link");
+    }
+
+    @Step("check input after click on I Forgot My Password")
+    public boolean checkoutInputAtPage() {
+        return driver.findElement(USER_INPUT).isDisplayed();
+    }
+
+    @Step("check button sing up after click on Create My Free FitDay Account")
+    public boolean checkoutButtonSingUp() {
+        return driver.findElement(SING_UP_BUTTON).isDisplayed();
     }
 }

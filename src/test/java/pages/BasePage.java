@@ -16,7 +16,7 @@ public abstract class BasePage {
     public static final String BASE_URL = "https://www.fitday.com";
     public static final By FORGOT_LINK = By.xpath("//p[@class='links']//a[1]");
     public static final By CREATE_LINK = By.xpath("//p[@class='links']//a[2]");
-
+    public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
