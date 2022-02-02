@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,6 +29,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
+
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         username = System.getenv().getOrDefault("QASE_USERNAME", utils.PropertyReader.getProperty("fitDay.username"));
@@ -37,7 +39,12 @@ public class BaseTest {
         singUpPage = new SingUpPage(driver);
         singUpModalPage = new SingUpModalPage(driver);
         logoPage = new LogoPage(driver);
+
+//        //private static final Cookie COOKIE = new Cookie("usprivacy", "1---", ".fitday.com");
+//        WebDriver driver = new ChromeDriver(options);
+//        driver.manage().addCookie(COOKIE);
     }
+
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {

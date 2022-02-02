@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class LoginPage extends BasePage{
+
     public static final By USERNAME_INPUT = By.id("username");
     public static final By PASSWORD_INPUT = By.xpath("//input[@type='password']");
     public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
@@ -16,11 +17,15 @@ public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
+    @Step("Open login page")
     public LoginPage open() {
         driver.get(BASE_URL + "/fitness/Login.html");
         log.info("open page login");
         return this;
     }
+
+    @Step("Login process")
     public HomePage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
@@ -30,6 +35,7 @@ public class LoginPage extends BasePage{
         log.info("Click on login button");
         return new HomePage(driver);
     }
+
     @Override
     public boolean isPageOpen() {
         return isExist(USERNAME_INPUT);
@@ -40,11 +46,13 @@ public class LoginPage extends BasePage{
         log.info("get error massage for user name");
         return driver.findElement(ERROR_MASSAGE_NAME).getText();
     }
+
     @Step("Get error massage")
     public String getErrorMassagePassword() {
         log.info("get error massage for password");
         return driver.findElement(ERROR_MASSAGE_PASSWORD).getText();
     }
+
     @Step("Click on links - I Forgot My Password")
     public void clickForgotLink() {
         driver.findElement(FORGOT_LINK).click();
