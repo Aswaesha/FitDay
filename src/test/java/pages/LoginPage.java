@@ -10,7 +10,6 @@ public class LoginPage extends BasePage{
     public static final By USERNAME_INPUT = By.id("username");
     public static final By PASSWORD_INPUT = By.xpath("//input[@type='password']");
     public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
-   // public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
 
