@@ -18,6 +18,7 @@ public abstract class BasePage {
     public static final By CREATE_LINK = By.xpath("//p[@class='links']//a[2]");
     public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
     public static final By FORUMS_TITLE = By.xpath("//ul//li/a[text()='Forums']");
+    public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class ForumsNavbarPage extends BasePage {
     public static final By FORUM_BUTTON_NAVBAR = By.xpath("//div[@id='menu']/ul//li//a/span[text()='FORUMS']");
 
-    @Step("click on nutrition button")
+    @Step("click on forums at navbar")
     public void clickOnForumNavbar() {
         driver.findElement(FORUM_BUTTON_NAVBAR).click();
         log.info("click on forums at navbar");
