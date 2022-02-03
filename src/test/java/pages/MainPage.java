@@ -14,7 +14,6 @@ public class MainPage extends BasePage {
     public static final By FITNESS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Fitness']");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
     public static final By FORUMS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
-    public static final By FORUMS_TITLE = By.xpath("//ul//li/a[text()='Forums']");
 
     @Step("click on nutrition button")
     public void listClickOnNutritionButton() {

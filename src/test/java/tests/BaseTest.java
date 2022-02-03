@@ -1,7 +1,6 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,8 +19,12 @@ public class BaseTest {
     SingUpPage singUpPage;
     SingUpModalPage singUpModalPage;
     LogoPage logoPage;
+    HomePage homePage;
     SearchPage searchPage;
     MainPage mainPage;
+    DietitianNavbarPage dietitianNavbarPage;
+    ForumsNavbarPage forumsNavbarPage;
+    ArticlesNavbarPage articlesNavbarPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
@@ -38,11 +41,12 @@ public class BaseTest {
         singUpPage = new SingUpPage(driver);
         singUpModalPage = new SingUpModalPage(driver);
         logoPage = new LogoPage(driver);
+        homePage = new HomePage(driver);
         searchPage = new SearchPage(driver);
         mainPage = new MainPage(driver);
-//        //private static final Cookie COOKIE = new Cookie("usprivacy", "1---", ".fitday.com");
-//        WebDriver driver = new ChromeDriver(options);
-//        driver.manage().addCookie(COOKIE);
+        dietitianNavbarPage = new DietitianNavbarPage(driver);
+        forumsNavbarPage = new ForumsNavbarPage(driver);
+        articlesNavbarPage = new ArticlesNavbarPage(driver);
     }
 
 
