@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 
 @Log4j2
 public class SingUpModalPage extends BasePage {
