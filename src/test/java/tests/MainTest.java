@@ -54,4 +54,5 @@ public class MainTest extends BaseTest {
         assertEquals(mainPage.getTextTitleOfPage(), "Fitness", "Title is not found");
     }
 
+
 }

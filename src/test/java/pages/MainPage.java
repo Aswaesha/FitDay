@@ -10,7 +10,6 @@ public class MainPage extends BasePage {
     public static final By LEARN_MORE_BUTTON = By.xpath("//ul[@class='dropdown']//li");
     public static final By NUTRITION_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Nutrition']");
     public static final By NUTRITION_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Nutrition']");
-    public static final By TITLE = By.xpath("//h2[@id='page-title']");
     public static final By FITNESS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Fitness']");
     public static final By FORUMS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
 
@@ -54,7 +53,7 @@ public class MainPage extends BasePage {
     @Step("Get error massage")
     public String getTextTitleOfPage() {
         log.info("get error massage for titles");
-        return driver.findElement(TITLE).getText();
+        return driver.findElement(TITLE_CATEGORIES).getText();
     }
 
     @Step("Get error massage")
