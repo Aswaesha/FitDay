@@ -20,6 +20,7 @@ public abstract class BasePage {
     public static final By TITLE_CATEGORIES = By.xpath("//h2[@id='page-title']");
     public static final By FORUMS_TITLE = By.xpath("//ul//li/a[text()='Forums']");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
+    public static final By PAGES_ITEM_TITLE = By.xpath("//div[@id='main']//h1");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

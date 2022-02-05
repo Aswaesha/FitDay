@@ -7,14 +7,13 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class ForumsNavbarPage extends BasePage {
-    public static final By FORUM_BUTTON_NAVBAR = By.xpath("//div[@id='menu']/ul//li//a/span[text()='FORUMS']");
+    public static final By TITLE_DISCUSSION_BOARDS= By.xpath("//h1//strong");
 
-    @Step("click on forums at navbar")
-    public void clickOnForumNavbar() {
-        driver.findElement(FORUM_BUTTON_NAVBAR).click();
-        log.info("click on forums at navbar");
+    @Step("Check title after click on home in forums navbar")
+    public String checkoutTitleDiscussionBoards() {
+        log.info("get title for details pade");
+        return driver.findElement(TITLE_DISCUSSION_BOARDS).getText();
     }
-
     public ForumsNavbarPage(WebDriver driver) {
         super(driver);
     }

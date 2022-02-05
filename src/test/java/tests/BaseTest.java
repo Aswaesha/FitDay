@@ -25,9 +25,13 @@ public class BaseTest {
     HomePage homePage;
     SearchPage searchPage;
     MainPage mainPage;
+    NavbarPage navbarPage;
     DietitianNavbarPage dietitianNavbarPage;
     ForumsNavbarPage forumsNavbarPage;
     ArticlesNavbarPage articlesNavbarPage;
+    HomeNavbarPage homeNavbarPage;
+    LogNavbarPage logNavbarPage;
+    ReportsNavbarPage reportsNavbarPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
@@ -48,11 +52,14 @@ public class BaseTest {
         homePage = new HomePage(driver);
         searchPage = new SearchPage(driver);
         mainPage = new MainPage(driver);
+        navbarPage = new NavbarPage(driver);
         dietitianNavbarPage = new DietitianNavbarPage(driver);
         forumsNavbarPage = new ForumsNavbarPage(driver);
         articlesNavbarPage = new ArticlesNavbarPage(driver);
+        homeNavbarPage = new HomeNavbarPage(driver);
+        logNavbarPage = new LogNavbarPage(driver);
+        reportsNavbarPage = new ReportsNavbarPage(driver);
     }
-
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {

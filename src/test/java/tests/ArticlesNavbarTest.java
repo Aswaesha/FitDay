@@ -11,54 +11,50 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        // homePage.isPageOpen();
+         homePage.isPageOpen();
 
-        //articlesNavbarPage.clickOnArticlesNutritionNavbar();
-        articlesNavbarPage.selectMenuOption("ARTICLES", "NUTRITION");
-
+        navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
     }
 
-//    @Test(description = "Open articles across Navbar with click on articles")
-//    public void clickArticlesNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        homePage.isPageOpen();
-//
-//        articlesNavbarPage.clickOnArticlesNavbar();
-//
-//        assertTrue(articlesNavbarPage.isPageOpen(), "Article page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
-//
-//    @Test(description = "Open fitness page across navbar")
-//    public void clickArticlesFitnessNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        // homePage.isPageOpen();
-//
-//        articlesNavbarPage.selectMenuOption("ARTICLES", "FITNESS");
-//
-//        assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
+    @Test(description = "Open articles across Navbar with click on articles")
+    public void clickArticlesNavbar() {
+        loginPage.open()
+                .login(username, password);
 
+        homePage.isPageOpen();
 
+        navbarPage.clickOnNavbar("ARTICLES");
 
-//    @Test(description = "Open nutrition page across navbar")
-//    public void clickArticlesHomeNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        //  homePage.isPageOpen();
-//
-//        articlesNavbarPage.clickOnArticlesHomeNavbar();
-//
-//        assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
+        assertTrue(articlesNavbarPage.isPageOpen(), "Article page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Open fitness page across navbar")
+    public void clickArticlesFitnessNavbar() {
+        loginPage.open()
+                .login(username, password);
+
+         homePage.isPageOpen();
+
+        navbarPage.selectMenuOption("ARTICLES", "FITNESS");
+
+        assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Open nutrition page across navbar")
+    public void clickArticlesHomeNavbar() {
+        loginPage.open()
+                .login(username, password);
+
+        homePage.isPageOpen();
+
+        navbarPage.selectMenuOption("ARTICLES", "HOME");
+
+        assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
 }

@@ -7,12 +7,12 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class DietitianNavbarPage extends BasePage {
-    public static final By DIETITIAN_BUTTON_NAVBAR = By.xpath("//div[@id='menu']/ul//li//a/span[text()='DIETITIAN']");
+    public static final By TITLE_DETAILS = By.xpath("//div[@class='Holder']//h1");
 
-    @Step("click on dietitian navbar")
-    public void clickOnDietitianNavbar() {
-        driver.findElement(DIETITIAN_BUTTON_NAVBAR).click();
-        log.info("click on dietitian navbar");
+    @Step("Check title after click on details in dietitian navbar")
+    public String checkoutTitleDetailsPag() {
+        log.info("get title for details pade");
+        return driver.findElement(TITLE_DETAILS).getText();
     }
 
     public DietitianNavbarPage(WebDriver driver) {

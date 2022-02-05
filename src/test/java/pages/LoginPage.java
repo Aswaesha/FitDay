@@ -67,12 +67,12 @@ public class LoginPage extends BasePage{
         log.info("click on Create free account link");
     }
 
-    @Step("check input after click on I Forgot My Password")
+    @Step("Check input after click on I Forgot My Password")
     public boolean checkoutInputAtPage() {
         return driver.findElement(USER_INPUT).isDisplayed();
     }
 
-    @Step("check button sing up after click on Create My Free FitDay Account")
+    @Step("Check button sing up after click on Create My Free FitDay Account")
     public boolean checkoutButtonSingUp() {
         return driver.findElement(SING_UP_BUTTON).isDisplayed();
     }
