@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+import utils.AllureUtils;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,6 +16,7 @@ public class ArticlesNavbarTest extends BaseTest {
         articlesNavbarPage.clickOnArticlesNavbar();
 
         assertTrue(articlesNavbarPage.isPageOpen(), "Article page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Open fitness page across navbar")
@@ -27,6 +29,7 @@ public class ArticlesNavbarTest extends BaseTest {
         articlesNavbarPage.clickOnArticlesFitnessNavbar();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Open nutrition page across navbar")
@@ -39,6 +42,7 @@ public class ArticlesNavbarTest extends BaseTest {
         articlesNavbarPage.clickOnArticlesNutritionNavbar();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Open nutrition page across navbar")
@@ -51,5 +55,6 @@ public class ArticlesNavbarTest extends BaseTest {
         articlesNavbarPage.clickOnArticlesHomeNavbar();
 
         assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 }

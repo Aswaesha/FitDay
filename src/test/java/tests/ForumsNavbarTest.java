@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+import utils.AllureUtils;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,5 +16,6 @@ public class ForumsNavbarTest extends BaseTest {
         forumsNavbarPage.clickOnForumNavbar();
 
         assertTrue(forumsNavbarPage.isPageOpen(), "Forums page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 }

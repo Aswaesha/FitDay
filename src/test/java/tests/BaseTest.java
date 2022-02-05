@@ -4,13 +4,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import pages.*;
 
 
 import java.util.concurrent.TimeUnit;
 
+@Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
     String username, password;
@@ -27,13 +30,14 @@ public class BaseTest {
     ArticlesNavbarPage articlesNavbarPage;
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp() {
+    public void setUp(ITestContext context) {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        context.setAttribute("driver", driver);
         username = System.getenv().getOrDefault("QASE_USERNAME", utils.PropertyReader.getProperty("fitDay.username"));
         password = System.getenv().getOrDefault("QASE_PASSWORD", utils.PropertyReader.getProperty("fitDay.password"));
 
