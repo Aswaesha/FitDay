@@ -50,7 +50,6 @@ public class ArticlesNavbarTest extends BaseTest {
 
         articlesNavbarPage.clickOnArticlesHomeNavbar();
 
-
         assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
     }
 }
