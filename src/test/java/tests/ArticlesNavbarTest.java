@@ -16,6 +16,7 @@ public class ArticlesNavbarTest extends BaseTest {
         //articlesNavbarPage.clickOnArticlesNutritionNavbar();
         articlesNavbarPage.selectMenuOption("ARTICLES", "NUTRITION");
 
+
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
     }

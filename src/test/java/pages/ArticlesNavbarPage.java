@@ -25,6 +25,7 @@ public class ArticlesNavbarPage extends BasePage {
         log.info("navig on articles navbar");
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         log.info("click on articles navbar");
+
     }
 
 //    @Step("click on articles navbar")
