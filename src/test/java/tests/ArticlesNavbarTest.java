@@ -9,8 +9,8 @@ import static org.testng.Assert.assertTrue;
 public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
+//        loginPage.open()
+//                .login(username, password);
         driver.get("https://www.fitday.com/app/home/dashboard#06FEB2022");
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
 
