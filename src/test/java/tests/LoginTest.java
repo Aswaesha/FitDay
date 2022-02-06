@@ -1,23 +1,31 @@
-//package tests;
+package tests;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+public class LoginTest extends BaseTest {
+//    @Test(description = "Check positive login process")
+//    public void positiveLogin() {
+//        boolean isHomePageOpened = loginPage
+//                .open()
+//                .login(username, password)
+//                .isPageOpen();
 //
-//import org.openqa.selenium.By;
-//import org.testng.annotations.Test;
-//
-//
-//import static org.testng.Assert.assertEquals;
-//import static org.testng.Assert.assertTrue;
-//
-//public class LoginTest extends BaseTest {
-////    @Test(description = "Check positive login process")
-////    public void positiveLogin() {
-////        boolean isHomePageOpened = loginPage
-////                .open()
-////                .login(username, password)
-////                .isPageOpen();
-////
-////        assertTrue(isHomePageOpened, "Страница HomePage не открылась");
-////    }
-//
+//        assertTrue(isHomePageOpened, "Страница HomePage не открылась");
+//    }
+    @Test(description = "Check positive login process")
+    public void positiveLogin() {
+         loginPage
+                .open()
+                .login(username, password);
+
+         driver.findElement(By.id("header-menu"));
+    }
+
 //    @Test(description = "Check login without user name")
 //    public void negativeLoginWithoutUsername() {
 //        loginPage.open()
@@ -51,4 +59,4 @@
 //
 //        assertTrue(loginPage.checkoutButtonSingUp(), "Страница Sing up не открылась");
 //    }
-//}
+}
