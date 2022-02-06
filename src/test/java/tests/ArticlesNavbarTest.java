@@ -19,10 +19,10 @@ public class ArticlesNavbarTest extends BaseTest {
 //        }
         AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
-        AllureUtils.takeScreenshot(driver);
+
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
-        AllureUtils.takeScreenshot(driver);
+
     }
 
 //    @Test(description = "Open articles across Navbar with click on articles")
@@ -49,11 +49,11 @@ public class ArticlesNavbarTest extends BaseTest {
         driver.findElement(By.xpath("//div[@id='notice']//div")).click();
         AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("ARTICLES", "FITNESS");
-        AllureUtils.takeScreenshot(driver);
+
         navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
-        AllureUtils.takeScreenshot(driver);
+
     }
 
 //    @Test(description = "Open home page across navbar")
