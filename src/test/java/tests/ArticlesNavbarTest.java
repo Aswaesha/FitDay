@@ -14,6 +14,7 @@ public class ArticlesNavbarTest extends BaseTest {
          homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
+        navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -27,6 +28,7 @@ public class ArticlesNavbarTest extends BaseTest {
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("ARTICLES");
+        navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.isPageOpen(), "Article page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -40,6 +42,7 @@ public class ArticlesNavbarTest extends BaseTest {
          homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES", "FITNESS");
+        navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -53,6 +56,7 @@ public class ArticlesNavbarTest extends BaseTest {
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES", "HOME");
+        navbarPage.isPageOpen();
 
         assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
         AllureUtils.takeScreenshot(driver);
