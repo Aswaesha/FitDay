@@ -37,6 +37,6 @@ public class NavbarPage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
-        return false;
+        return isExist1(SIDE_ITEM_BUTTON_NAVBAR);
     }
 }
