@@ -12,7 +12,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-         homePage.isPageOpen();
+      //   homePage.isPageOpen();
        // navbarPage.isErrorOpen();
 //        if (driver.findElement(By.xpath("//div[@class='step']")).isDisplayed()){
 //            driver.findElement(By.xpath("//div[@class='close']")).click();
@@ -44,7 +44,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-         homePage.isPageOpen();
+
         //driver.findElement(By.xpath("//div[@class='close']")).click();
         driver.findElement(By.xpath("//div[@id='notice']//div")).click();
         AllureUtils.takeScreenshot(driver);
