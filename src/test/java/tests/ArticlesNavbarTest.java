@@ -17,10 +17,9 @@ public class ArticlesNavbarTest extends BaseTest {
 //        if (driver.findElement(By.xpath("//div[@class='step']")).isDisplayed()){
 //            driver.findElement(By.xpath("//div[@class='close']")).click();
 //        }
-
+        AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
-
-        navbarPage.isPageOpen();
+        AllureUtils.takeScreenshot(driver);
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -48,9 +47,9 @@ public class ArticlesNavbarTest extends BaseTest {
          homePage.isPageOpen();
         //driver.findElement(By.xpath("//div[@class='close']")).click();
         driver.findElement(By.xpath("//div[@id='notice']//div")).click();
-
+        AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("ARTICLES", "FITNESS");
-
+        AllureUtils.takeScreenshot(driver);
         navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
