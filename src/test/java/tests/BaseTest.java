@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -36,9 +37,15 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
         WebDriverManager.chromedriver().setup();
+       // System.setProperty("webdriver.chrome.driver", "//chrome path in system//");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        options.addArguments("disable-popup-blocking");
+
+        options.addArguments("incognito");
+        options.addArguments("--disable-popup-blocking");
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//        driver = new ChromeDriver(capabilities);
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
