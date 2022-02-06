@@ -43,7 +43,7 @@ public class ArticlesNavbarTest extends BaseTest {
     public void clickArticlesFitnessNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
-
+        loginPage.login(username, password);
 
         //driver.findElement(By.xpath("//div[@class='close']")).click();
         driver.findElement(By.xpath("//div[@id='notice']//div")).click();
