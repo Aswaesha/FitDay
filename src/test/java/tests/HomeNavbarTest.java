@@ -1,24 +1,24 @@
-package tests;
-
-import org.openqa.selenium.By;
-import org.testng.annotations.Test;
-import utils.AllureUtils;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-public class HomeNavbarTest extends BaseTest {
-    @Test
-    public void  addFoodAtDashboard(){
-        loginPage.open();
-        loginPage.login(username,password);
-        driver.navigate().refresh();
-        homeNavbarPage.clickAddButton();
-        homeNavbarPage.inputText();
-        homeNavbarPage.clickPlusButton();
-
-        assertEquals(homeNavbarPage.checkFoodTable(),"Apple, raw","Food not found");
-    }
+//package tests;
+//
+//import org.openqa.selenium.By;
+//import org.testng.annotations.Test;
+//import utils.AllureUtils;
+//
+//import static org.testng.Assert.assertEquals;
+//import static org.testng.Assert.assertTrue;
+//
+//public class HomeNavbarTest extends BaseTest {
+//    @Test
+//    public void  addFoodAtDashboard(){
+//        loginPage.open();
+//        loginPage.login(username,password);
+//        driver.navigate().refresh();
+//        homeNavbarPage.clickAddButton();
+//        homeNavbarPage.inputText();
+//        homeNavbarPage.clickPlusButton();
+//
+//        assertEquals(homeNavbarPage.checkFoodTable(),"Apple, raw","Food not found");
+//    }
 //    @Test(description = "Open calendar page across navbar")
 //    public void clickHomeCalendarNavbar() {
 //        loginPage.open()
@@ -74,4 +74,4 @@ public class HomeNavbarTest extends BaseTest {
 //        AllureUtils.takeScreenshot(driver);
 //    }
 
-}
+//}

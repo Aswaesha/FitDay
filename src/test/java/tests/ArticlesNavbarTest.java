@@ -1,27 +1,28 @@
-//package tests;
-//
-//import org.openqa.selenium.By;
-//import org.testng.annotations.Test;
-//import utils.AllureUtils;
-//
-//import static org.testng.Assert.assertTrue;
-//
-//public class ArticlesNavbarTest extends BaseTest {
-//    @Test(description = "Open nutrition page across navbar")
-//    public void clickArticlesNutritionNavbar() throws InterruptedException {
-//        loginPage.open()
-//                .login(username, password);
-//        driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
-//       // driver.get("https://www.fitday.com/fitness/Login.html");
+package tests;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+import utils.AllureUtils;
+
+import static org.testng.Assert.assertTrue;
+
+public class ArticlesNavbarTest extends BaseTest {
+    @Test(description = "Open nutrition page across navbar")
+    public void clickArticlesNutritionNavbar() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+        //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
+       // driver.get("https://www.fitday.com/fitness/Login.html");
+       // driver.navigate().refresh();
+//        loginPage.login(username, password);
 //        driver.navigate().refresh();
-////        loginPage.login(username, password);
-////        driver.navigate().refresh();
-//        navbarPage.selectMenuOption("ARTICLES");
-//        navbarPage.selectSecondMenuOption("NUTRITION");
-//
-//        assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
+        navbarPage.selectMenuOption("ARTICLES");
+        navbarPage.selectSecondMenuOption("NUTRITION");
+
+        assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
+        AllureUtils.takeScreenshot(driver);
+        driver.manage().deleteAllCookies();
+    }
 
 //    @Test(description = "Open articles across Navbar with click on articles")
 //    public void clickArticlesNavbar() {
@@ -62,4 +63,6 @@
 //        assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
 //        AllureUtils.takeScreenshot(driver);
 //    }
-//}
+}
+
+
