@@ -15,5 +15,4 @@ public class LogoPage extends BasePage{
         super(driver);
     }
 
-
 }

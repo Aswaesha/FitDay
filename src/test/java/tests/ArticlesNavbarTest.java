@@ -14,9 +14,9 @@ public class ArticlesNavbarTest extends BaseTest {
 
          homePage.isPageOpen();
        // navbarPage.isErrorOpen();
-        if (driver.findElement(By.xpath("//div[@class='step']")).isDisplayed()){
-            driver.findElement(By.xpath("//div[@class='close']")).click();
-        }
+//        if (driver.findElement(By.xpath("//div[@class='step']")).isDisplayed()){
+//            driver.findElement(By.xpath("//div[@class='close']")).click();
+//        }
 
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
 

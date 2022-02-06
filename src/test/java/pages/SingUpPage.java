@@ -18,6 +18,8 @@ public class SingUpPage extends BasePage {
         return isExist(LOGIN_LINKS);
     }
 
+
+
     public SingUpPage(WebDriver driver) {
         super(driver);
     }

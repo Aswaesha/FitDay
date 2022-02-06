@@ -11,6 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 public class NavbarPage extends BasePage {
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
+    public static final By LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption, String secondMenuOption) throws InterruptedException {
@@ -37,6 +38,8 @@ public class NavbarPage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
-        return isExist1(SIDE_ITEM_BUTTON_NAVBAR);
+        log.info("cheaclgfnc ");
+        return isExist(TITLE_CATEGORIES);
     }
+
 }

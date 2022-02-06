@@ -22,7 +22,6 @@ public class SearchPage extends BasePage{
         log.info("open main page");
         return this;
     }
-
     public SearchPage(WebDriver driver) {
         super(driver);
     }

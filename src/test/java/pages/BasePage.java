@@ -19,6 +19,9 @@ public abstract class BasePage {
     public static final By FORUMS_TITLE = By.xpath("//ul//li/a[text()='Forums']");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
     public static final By PAGES_ITEM_TITLE = By.xpath("//div[@id='main']//h1");
+    public static final By ERROR= By.xpath("//div[@id='notice']//div");
+
+
 
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
@@ -39,47 +42,5 @@ public abstract class BasePage {
             return false;
         }
     }
-
-//    public class OperationHelper {
-//        public static void doWithRetry(){
-//        boolean success = false;
-//    while(!success){
-//            try {
-//                driver.findElement(By.id(MAIN_ITEM_NAVBAR)).isDisplayed();
-//                driver.findElement(By.id(SIDE_ITEM_BUTTON_NAVBAR)).isDisplayed();
-//                success = true;
-//            } catch (NearlyUnexpectedException e) {
-//                fix_the_problem();
-//            }}
-//        }
-//    }
-    protected boolean isExist1(String sideItemButtonNavbar){
-    for (int retries = 0;; retries++) {
-        try {
-
-            return  driver.findElement(By.id(SIDE_ITEM_BUTTON_NAVBAR)).isDisplayed();
-
-
-    } catch (NoSuchElementException ex){
-            if (retries < 6) {
-                continue;
-            } else {
-                throw ex;
-            }
-        }
-    }}
-//    protected boolean isExist2(){
-//        for (int retries = 0;; retries++) {
-//            try {
-//                return driver.findElement(By.id(SIDE_ITEM_BUTTON_NAVBAR)).isDisplayed();  driver.findElement(By.id(MAIN_ITEM_NAVBAR)).isDisplayed();
-//            } catch (NoSuchElementException ex) {
-//                if (retries < 6) {
-//                    continue;
-//                } else {
-//                    throw ex;
-//                }
-//            }
-//        }}
-
 
 }
