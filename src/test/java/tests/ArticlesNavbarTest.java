@@ -10,6 +10,8 @@ public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
         for(int turn= 0;turn<20;turn++){
+            driver.get("https://www.fitday.com/");
+            driver.findElement(By.id("login"));
         loginPage.open()
                 .login(username, password);
         //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");

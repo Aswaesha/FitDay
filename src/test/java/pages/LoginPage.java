@@ -26,10 +26,21 @@ public class LoginPage extends BasePage{
         log.info("open page login");
         return this;
     }
-
+//    @Step("Login process")
+//    public void login(String userName, String password) throws InterruptedException {
+//        for(int turn= 0;turn<5;turn++){
+//            driver.findElement(USERNAME_INPUT).sendKeys(userName);
+//            log.info("Enter user name ");
+//            driver.findElement(PASSWORD_INPUT).sendKeys(password);
+//            log.info("Enter password");
+//            Thread.sleep(5000);
+//            //driver.findElement(By.id("rememberme")).click();
+//            driver.findElement(LOGIN_BUTTON).click();
+//            log.info("Click on login button");
+//            driver.findElement( By.id("header-menu")).isDisplayed();
+//        }}
     @Step("Login process")
-    public void login(String userName, String password) throws InterruptedException {
-        for(int turn= 0;turn<5;turn++){
+    public HomePage login(String userName, String password) throws InterruptedException {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
@@ -38,8 +49,8 @@ public class LoginPage extends BasePage{
         //driver.findElement(By.id("rememberme")).click();
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-        driver.findElement( By.id("header-menu")).isDisplayed();
-    }}
+        return new HomePage(driver);
+    }
 
     @Override
     public boolean isPageOpen() {
