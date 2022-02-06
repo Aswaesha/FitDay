@@ -14,7 +14,7 @@ public class HomePage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
-        return isExist(LOGIN_HOME_LINK);
+        return isExist(By.id("header-menu"));
     }
 
 }
