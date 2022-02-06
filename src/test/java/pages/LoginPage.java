@@ -28,17 +28,18 @@ public class LoginPage extends BasePage{
     }
 
     @Step("Login process")
-    public HomePage login(String userName, String password) throws InterruptedException {
+    public void login(String userName, String password) throws InterruptedException {
+        for(int turn= 0;turn<5;turn++){
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         log.info("Enter password");
-        //Thread.sleep(5000);
-        driver.findElement(By.id("rememberme")).click();
+        Thread.sleep(5000);
+        //driver.findElement(By.id("rememberme")).click();
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-        return new HomePage(driver);
-    }
+        driver.findElement( By.id("header-menu")).isDisplayed();
+    }}
 
     @Override
     public boolean isPageOpen() {
