@@ -24,7 +24,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+       // homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("ACTIVITY");
