@@ -33,7 +33,8 @@ public class LoginPage extends BasePage{
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         log.info("Enter password");
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        driver.findElement(By.id("rememberme")).click();
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         return new HomePage(driver);
