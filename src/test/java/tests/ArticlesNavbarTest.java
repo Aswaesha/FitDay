@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
+        for(int turn= 0;turn<20;turn++){
         loginPage.open()
                 .login(username, password);
         //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
@@ -22,7 +23,7 @@ public class ArticlesNavbarTest extends BaseTest {
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
         driver.manage().deleteAllCookies();
-    }
+    }}
 
 //    @Test(description = "Open articles across Navbar with click on articles")
 //    public void clickArticlesNavbar() {
@@ -43,11 +44,15 @@ public class ArticlesNavbarTest extends BaseTest {
 //        loginPage.open()
 //                .login(username, password);
 //
-//        navbarPage.selectMenuOption("ARTICLES", "FITNESS");
-//        navbarPage.isPageOpen();
+//        //navbarPage.selectMenuOption("ARTICLES", "FITNESS");
+//        navbarPage.selectMenuOption("ARTICLES");
+//        navbarPage.selectSecondMenuOption("FITNESS");
+//       // navbarPage.isPageOpen();
 //
 //        assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
 //        AllureUtils.takeScreenshot(driver);
+//        AllureUtils.takeScreenshot(driver);
+//        driver.manage().deleteAllCookies();
 //    }
 
 //    @Test(description = "Open home page across navbar")
