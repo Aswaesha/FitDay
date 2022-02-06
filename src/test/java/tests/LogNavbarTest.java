@@ -27,13 +27,14 @@ public class LogNavbarTest extends BaseTest {
 
        // homePage.isPageOpen();
         driver.findElement(By.xpath("//tr//td[1]//a//span[text()='Add »']")).click();
+        AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("ACTIVITY");
 
 
 
         assertEquals(homeNavbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
-        AllureUtils.takeScreenshot(driver);
+
     }
 //
 //    @Test(description = "Open weight page across navbar")
