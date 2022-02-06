@@ -47,7 +47,6 @@ public class ArticlesNavbarTest extends BaseTest {
 
          homePage.isPageOpen();
 
-        navbarPage.isErrorOpen();
         navbarPage.selectMenuOption("ARTICLES", "FITNESS");
 
         navbarPage.isPageOpen();
