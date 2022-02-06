@@ -50,15 +50,15 @@ public class MainPage extends BasePage {
         log.info("click on forums");
     }
 
-    @Step("Get error massage")
+    @Step("Get error message")
     public String getTextTitleOfPage() {
-        log.info("get error massage for titles");
+        log.info("get error message for titles");
         return driver.findElement(TITLE_CATEGORIES).getText();
     }
 
-    @Step("Get error massage")
+    @Step("Get error message")
     public String getTextTitleOfForums() {
-        log.info("get error massage for forum title");
+        log.info("get error message for forum title");
         return driver.findElement(FORUMS_TITLE).getText();
     }
 
