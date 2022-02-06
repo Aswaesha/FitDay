@@ -12,6 +12,7 @@ public class ArticlesNavbarTest extends BaseTest {
 //        loginPage.open()
 //                .login(username, password);
         driver.get("https://www.fitday.com/app/home/dashboard#06FEB2022");
+        loginPage.login(username, password);
         navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
