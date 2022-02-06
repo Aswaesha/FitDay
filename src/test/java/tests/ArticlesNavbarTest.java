@@ -12,8 +12,8 @@ public class ArticlesNavbarTest extends BaseTest {
         for(int turn= 0;turn<20;turn++){
             driver.get("https://www.fitday.com/");
             driver.findElement(By.id("login"));
-        loginPage.open()
-                .login(username, password);
+      //  loginPage.open();
+                loginPage.login(username, password);
         //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
        // driver.get("https://www.fitday.com/fitness/Login.html");
        // driver.navigate().refresh();
