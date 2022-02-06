@@ -2,10 +2,8 @@ package pages;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
@@ -24,7 +22,7 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 40);
+        wait = new WebDriverWait(driver, 30);
     }
 
     public abstract boolean isPageOpen();
@@ -37,6 +35,7 @@ public abstract class BasePage {
             log.error(">>> !!!" + ex.getMessage());
             return false;
         }
-
     }
+
+
 }

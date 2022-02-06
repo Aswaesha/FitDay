@@ -45,7 +45,7 @@ public class ArticlesNavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open nutrition page across navbar")
+    @Test(description = "Open home page across navbar")
     public void clickArticlesHomeNavbar() {
         loginPage.open()
                 .login(username, password);

@@ -26,6 +26,7 @@ public class NavbarPage extends BasePage {
     public void clickOnNavbar(String menuOption) {
         driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, menuOption))).click();
         log.info("click on articles navbar");
+
     }
 
     public NavbarPage(WebDriver driver) {
