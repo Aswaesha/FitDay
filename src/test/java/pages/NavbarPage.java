@@ -13,12 +13,14 @@ public class NavbarPage extends BasePage {
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
+    public void selectMenuOption(String firstMenuOption, String secondMenuOption) throws InterruptedException {
         log.info("click start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
+        Thread.sleep(5000);
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+        Thread.sleep(5000);
         log.info("click on item articles navbar");
     }
 

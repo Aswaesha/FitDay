@@ -7,7 +7,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
-    public void clickArticlesNutritionNavbar() {
+    public void clickArticlesNutritionNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
@@ -33,7 +33,7 @@ public class ArticlesNavbarTest extends BaseTest {
     }
 
     @Test(description = "Open fitness page across navbar")
-    public void clickArticlesFitnessNavbar() {
+    public void clickArticlesFitnessNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
@@ -46,7 +46,7 @@ public class ArticlesNavbarTest extends BaseTest {
     }
 
     @Test(description = "Open home page across navbar")
-    public void clickArticlesHomeNavbar() {
+    public void clickArticlesHomeNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
