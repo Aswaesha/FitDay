@@ -46,7 +46,7 @@ public class ArticlesNavbarTest extends BaseTest {
                 .login(username, password);
 
          homePage.isPageOpen();
-
+        driver.findElement(By.xpath("//div[@class='close']")).click();
         navbarPage.selectMenuOption("ARTICLES", "FITNESS");
 
         navbarPage.isPageOpen();
