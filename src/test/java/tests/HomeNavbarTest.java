@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
 
@@ -17,29 +14,41 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.login(username,password);
         driver.navigate().refresh();
 
-       homeNavbarPage.clickAddButton();
-       homeNavbarPage.inputText();
-       homeNavbarPage.clickPlusButton();
-
-       assertEquals(homeNavbarPage.checkFoodTable(),"Apple, raw","Food not found");
-    }
-        @Test(description = "Open calendar page across navbar")
-    public void clickHomeCalendarNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-            Actions action = new Actions(driver);
-            WebElement we = driver.findElement(By.xpath("//a[span[text()='HOME']]"));
-            action.moveToElement(we).build().perform();
-            Thread.sleep(5000);
-
-        driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CALENDAR']")).click();
+       driver.findElement(By.xpath("//tr//td[1]//a//span[text()='Add »']")).click();
+       driver.findElement(By.xpath("//input[@value='What did you eat today?']")).sendKeys("apple");
         Thread.sleep(5000);
+       driver.findElement(By.xpath("//td[@class='actions']//a")).click();
 
-
-        assertTrue(homeNavbarPage.checkoutCalendarTable(), "Calendar page is not open");
-        AllureUtils.takeScreenshot(driver);
+       assertEquals(driver.findElement(By.xpath("//tr[@class='food_log fd_food_log_u-998897-620009B5-c']//td[@class='name']//a[text()='Apple, raw']")).getText(),"Apple, raw","Food not found");
     }
+    @Test
+    public void  addFoodAtDashboard2() throws InterruptedException {
+        loginPage.open();
+        loginPage.login(username,password);
+        driver.navigate().refresh();
+
+        homeNavbarPage.clickAddButton();
+        homeNavbarPage.inputText();
+        homeNavbarPage.clickPlusButton();
+
+        assertEquals(homeNavbarPage.checkFoodTable(),"Apple, raw","Food not found");
+    }
+//    @Test(description = "Open calendar page across navbar")
+//    public void clickHomeCalendarNavbar() {
+//        loginPage.open()
+//                .login(username, password);
+//
+////            Actions action = new Actions(driver);
+////            WebElement we = driver.findElement(By.xpath("//a[span[text()='HOME']]"));
+////            action.moveToElement(we).build().perform();
+////            Thread.sleep(5000);
+//
+//        driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CALENDAR']")).click();
+//
+//
+//        assertTrue(homeNavbarPage.checkoutCalendarTable(), "Calendar page is not open");
+//        AllureUtils.takeScreenshot(driver);
+//    }
 //    @Test(description = "Open calendar page across navbar")
 //    public void clickHomeCalendarNavbar() {
 //        loginPage.open()
