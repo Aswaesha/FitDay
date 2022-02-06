@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class HomeNavbarTest extends BaseTest {
     @Test
-    public void  addFoodAtDashboard() throws InterruptedException {
+    public void  addFoodAtDashboard(){
         loginPage.open();
         loginPage.login(username,password);
         driver.navigate().refresh();

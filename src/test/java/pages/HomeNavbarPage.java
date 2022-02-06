@@ -26,9 +26,9 @@ public class HomeNavbarPage extends BasePage {
         log.info("click on plus button");
     }
     @Step("Input text")
-    public void inputText() throws InterruptedException {
+    public void inputText() {
         driver.findElement(INPUT_TEXT).sendKeys("apple");
-        Thread.sleep(5000);
+       // Thread.sleep(5000);
         log.info("text in input");
     }
 
