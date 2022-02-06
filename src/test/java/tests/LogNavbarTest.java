@@ -1,11 +1,11 @@
-//package tests;
-//
-//import org.testng.annotations.Test;
-//import utils.AllureUtils;
-//
-//import static org.testng.Assert.assertEquals;
-//
-//public class LogNavbarTest extends BaseTest {
+package tests;
+
+import org.testng.annotations.Test;
+import utils.AllureUtils;
+
+import static org.testng.Assert.assertEquals;
+
+public class LogNavbarTest extends BaseTest {
 //    @Test(description = "Open food across Navbar with click on log")
 //    public void clickDietitianNavbar() {
 //        loginPage.open()
@@ -19,18 +19,22 @@
 //        AllureUtils.takeScreenshot(driver);
 //    }
 //
-//    @Test(description = "Open activity page across navbar")
-//    public void clickLogActivityNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        homePage.isPageOpen();
-//
-//        navbarPage.selectMenuOption("LOG", "ACTIVITY");
-//
-//        assertEquals(homeNavbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
+    @Test(description = "Open activity page across navbar")
+    public void clickLogActivityNavbar() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        homePage.isPageOpen();
+
+        navbarPage.clickOnNavbar("LOG");
+        navbarPage.selectMenuOption("LOG");
+        navbarPage.selectSecondMenuOption("ACTIVITY");
+
+
+
+        assertEquals(homeNavbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
 //
 //    @Test(description = "Open weight page across navbar")
 //    public void clickLogWeightNavbar() {
@@ -83,4 +87,4 @@
 //        assertEquals(homeNavbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
 //        AllureUtils.takeScreenshot(driver);
 //    }
-//}
+}
