@@ -26,7 +26,6 @@ public class LogNavbarTest extends BaseTest {
 
         homePage.isPageOpen();
 
-        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("ACTIVITY");
 
