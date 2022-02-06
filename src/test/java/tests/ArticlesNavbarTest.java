@@ -1,12 +1,12 @@
-package tests;
-
-import org.openqa.selenium.By;
-import org.testng.annotations.Test;
-import utils.AllureUtils;
-
-import static org.testng.Assert.assertTrue;
-
-public class ArticlesNavbarTest extends BaseTest {
+//package tests;
+//
+//import org.openqa.selenium.By;
+//import org.testng.annotations.Test;
+//import utils.AllureUtils;
+//
+//import static org.testng.Assert.assertTrue;
+//
+//public class ArticlesNavbarTest extends BaseTest {
 //    @Test(description = "Open nutrition page across navbar")
 //    public void clickArticlesNutritionNavbar() throws InterruptedException {
 ////        loginPage.open()
@@ -61,4 +61,4 @@ public class ArticlesNavbarTest extends BaseTest {
 //        assertTrue(dietitianNavbarPage.isPageOpen(), "Home page is not open");
 //        AllureUtils.takeScreenshot(driver);
 //    }
-}
+//}
