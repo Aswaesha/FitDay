@@ -16,7 +16,8 @@ public class ArticlesNavbarTest extends BaseTest {
         driver.navigate().refresh();
 //        loginPage.login(username, password);
 //        driver.navigate().refresh();
-        navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
+        navbarPage.selectMenuOption("ARTICLES");
+        navbarPage.selectSecondMenuOption("NUTRITION");
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);

@@ -14,11 +14,15 @@ public class NavbarPage extends BasePage {
     public static final By LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption, String secondMenuOption) throws InterruptedException {
+    public void selectMenuOption(String firstMenuOption) throws InterruptedException {
         log.info("click start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
+        Thread.sleep(5000);
+    }
+    @Step("Click on items navbar")
+    public void selectSecondMenuOption(String secondMenuOption) throws InterruptedException {
         Thread.sleep(5000);
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         Thread.sleep(5000);
