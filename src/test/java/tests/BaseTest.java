@@ -37,16 +37,8 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
         WebDriverManager.chromedriver().setup();
-       // System.setProperty("webdriver.chrome.driver", "//chrome path in system//");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-
-        options.addArguments("incognito");
-        options.addArguments("--disable-popup-blocking");
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//        driver = new ChromeDriver(capabilities);
-
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);

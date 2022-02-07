@@ -12,7 +12,7 @@ public class HomeNavbarPage extends BasePage {
     public static final By ADD_BUTTON = By.xpath("//tr//td[1]//a//span[text()='Add »']");
     public static final By INPUT_TEXT = By.xpath("//input[@value='What did you eat today?']");
     public static final By PLUS_BUTTON = By.xpath("//td[@class='actions']//a");
-    public static final By FOOD_ITEM =By.xpath("//tr[@class='food_log fd_food_log_u-998897-620009B5-c']//td[@class='name']//a[text()='Apple, raw']");
+    public static final By FOOD_ITEM =By.xpath("//table[@class='ib-list']//tbody//td[@class='name']//a");
 
 
     @Step("Check  food at table")
@@ -26,9 +26,9 @@ public class HomeNavbarPage extends BasePage {
         log.info("click on plus button");
     }
     @Step("Input text")
-    public void inputText() {
+    public void inputText() throws InterruptedException {
         driver.findElement(INPUT_TEXT).sendKeys("apple");
-       // Thread.sleep(5000);
+        Thread.sleep(5000);
         log.info("text in input");
     }
 
