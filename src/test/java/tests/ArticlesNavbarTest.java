@@ -9,24 +9,24 @@ import static org.testng.Assert.assertTrue;
 public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
-        //for(int turn= 0;turn<20;turn++){
-            driver.get("https://www.fitday.com/");
-            driver.findElement(By.id("login")).click();
-      //  loginPage.open();
-                loginPage.login(username, password);
-        //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
-       // driver.get("https://www.fitday.com/fitness/Login.html");
-       // driver.navigate().refresh();
+        for (int turn = 0; turn < 20; turn++) {
+//            driver.get("https://www.fitday.com/");
+//            driver.findElement(By.id("login")).click();
+            loginPage.open();
+            loginPage.login(username, password);
+            //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
+            // driver.get("https://www.fitday.com/fitness/Login.html");
+            // driver.navigate().refresh();
 //        loginPage.login(username, password);
 //        driver.navigate().refresh();
-        navbarPage.selectMenuOption("ARTICLES");
-        navbarPage.selectSecondMenuOption("NUTRITION");
+            navbarPage.selectMenuOption("ARTICLES");
+            navbarPage.selectSecondMenuOption("NUTRITION");
 
-        assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
-        AllureUtils.takeScreenshot(driver);
-        driver.manage().deleteAllCookies();
-//    }
-}
+            assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
+            AllureUtils.takeScreenshot(driver);
+            driver.manage().deleteAllCookies();
+        }
+    }
 
 //    @Test(description = "Open articles across Navbar with click on articles")
 //    public void clickArticlesNavbar() {
