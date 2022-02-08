@@ -3,7 +3,9 @@ package pages;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 
 @Log4j2
 public class MainPage extends BasePage {
@@ -50,9 +52,17 @@ public class MainPage extends BasePage {
         log.info("click on forums");
     }
 
-    @Step("Get error message")
+    @Step("Get text title")
     public String getTextTitleOfPage() {
         log.info("get error message for titles");
+
+        new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+
+
         return driver.findElement(TITLE_CATEGORIES).getText();
     }
 
