@@ -46,7 +46,7 @@ public class LoginPage extends BasePage {
 //            log.info("Click on login button");
 //            driver.findElement( By.id("header-menu")).isDisplayed();
 //        }}
-    private int count;
+    //private int count;
 
     @Step("Login process")
     public HomePage login(String userName, String password) throws InterruptedException {
@@ -59,11 +59,11 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         Thread.sleep(3000);
-        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10) {
-            count++;
-            log.info("###### attempt number: " + count);
-            login(userName, password);
-        }
+//        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10) {
+//            count++;
+//            log.info("###### attempt number: " + count);
+//            login(userName, password);
+//        }
         return new HomePage(driver);
     }
 
