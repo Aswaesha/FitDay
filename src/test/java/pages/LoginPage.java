@@ -5,10 +5,9 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static pages.NavbarPage.MAIN_ITEM_NAVBAR;
 
 @Log4j2
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     public static final By USERNAME_INPUT = By.id("username");
     public static final By USER_INPUT = By.id("Username");
@@ -17,6 +16,9 @@ public class LoginPage extends BasePage{
     public static final By SING_UP_BUTTON = By.xpath("//input[@value='Sign Up']");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
+    public static final By PC_BUTTON = By.xpath("//li[@class='last']/a//span");
+    public static final By PREMIUM_BUTTON = By.xpath("//li[@class='first']/a//span");
+    public static final By PRODUCTS_TITLE = By.xpath("//div[@class='Holder']//h1");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -28,7 +30,8 @@ public class LoginPage extends BasePage{
         log.info("open page login");
         return this;
     }
-    private int count;
+
+//    private int count;
 //    @Step("Login process")
 //    public void login(String userName, String password) throws InterruptedException {
 //        for(int turn= 0;turn<5;turn++){
@@ -54,11 +57,11 @@ public class LoginPage extends BasePage{
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         Thread.sleep(3000);
-        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10) {
-            count++;
-            log.info("###### attempt number: " + count);
-            login(userName, password);
-        }
+//        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10) {
+//            count++;
+//            log.info("###### attempt number: " + count);
+//            login(userName, password);
+//        }
         return new HomePage(driver);
     }
 
@@ -91,6 +94,21 @@ public class LoginPage extends BasePage{
         log.info("click on Create free account link");
     }
 
+    @Step("Click on  FitDay Premium")
+    public void clickFitDayPremium() {
+        driver.findElement(PREMIUM_BUTTON).click();
+        log.info("click on FitDay Premium ");
+    }
+
+    @Step("Click on  FitDay PC")
+    public void clickFitDayPC() {
+        driver.findElement(PC_BUTTON).click();
+        log.info("click on FitDay PC");
+    }
+    @Step("Check title on products pages")
+    public String checkoutTitleAtProductPage() {
+        return driver.findElement(PRODUCTS_TITLE).getText();
+    }
     @Step("Check input after click on I Forgot My Password")
     public boolean checkoutInputAtPage() {
         return driver.findElement(USER_INPUT).isDisplayed();

@@ -50,4 +50,19 @@ public class LoginTest extends BaseTest {
 
         assertTrue(loginPage.checkoutButtonSingUp(), "Страница Sing up не открылась");
     }
+
+    @Test(description = "Check title after click on FitDay premium")
+    public void checkTitleClickPremium(){
+        loginPage.open();
+        loginPage.clickFitDayPremium();
+
+        assertEquals(loginPage.checkoutTitleAtProductPage(), "Premium $4.16 / month", "Title is not found");
+    }
+    @Test(description = "Check Check title after click on FitDay pc")
+    public void checkTitleClickPc() {
+        loginPage.open();
+        loginPage.clickFitDayPC();
+
+        assertEquals(loginPage.checkoutTitleAtProductPage(), "PC $29.95 (was $39.95)", "Title is not found");
+    }
 }
