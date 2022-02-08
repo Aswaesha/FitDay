@@ -9,20 +9,19 @@ public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
        // for (int turn = 0; turn < 20; turn++) {
-//            driver.get("https://www.fitday.com/");
-//            driver.findElement(By.id("login")).click();
+
             loginPage.open();
             loginPage.login(username, password);
-            //driver.get("https://www.fitday.com/app/reports/home#06FEB2022");
-            // driver.get("https://www.fitday.com/fitness/Login.html");
-            // driver.navigate().refresh();
-//        loginPage.login(username, password);
-//        driver.navigate().refresh();
+
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+
             navbarPage.selectMenuOption("ARTICLES");
             navbarPage.selectSecondMenuOption("NUTRITION");
+
             assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
             AllureUtils.takeScreenshot(driver);
-            driver.manage().deleteAllCookies();
+           // driver.manage().deleteAllCookies();
      //   }
     }
 
@@ -31,7 +30,9 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+       // homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.clickOnNavbar("ARTICLES");
         navbarPage.isPageOpen();
@@ -45,9 +46,12 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+
         navbarPage.selectMenuOption("ARTICLES");
         navbarPage.selectSecondMenuOption("FITNESS");
-       // navbarPage.isPageOpen();
+        navbarPage.isPageOpen();
 
         assertTrue(articlesNavbarPage.checkoutTitle(), "Fitness page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -60,7 +64,9 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("ARTICLES");
         navbarPage.selectSecondMenuOption("HOME");

@@ -12,7 +12,10 @@ public class HomeNavbarTest extends BaseTest {
     public void  addFoodAtDashboard() throws InterruptedException{
         loginPage.open();
         loginPage.login(username,password);
+
         driver.navigate().refresh();
+        Thread.sleep(5000);
+
         homeNavbarPage.clickAddButton();
         homeNavbarPage.inputText();
         homeNavbarPage.clickPlusButton();
@@ -25,7 +28,10 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+
+       // homePage.isPageOpen();
         navbarPage.selectMenuOption("HOME");
         navbarPage.selectSecondMenuOption("CALENDAR");
 
@@ -38,7 +44,9 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("HOME");
         navbarPage.selectSecondMenuOption("PROFILE");
@@ -52,7 +60,9 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("HOME");
         navbarPage.selectSecondMenuOption("SETTINGS");

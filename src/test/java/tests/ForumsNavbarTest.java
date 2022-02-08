@@ -12,7 +12,9 @@ public class ForumsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.clickOnNavbar("FORUMS");
 
@@ -25,7 +27,9 @@ public class ForumsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("FORUMS");
         navbarPage.selectSecondMenuOption("HOME");

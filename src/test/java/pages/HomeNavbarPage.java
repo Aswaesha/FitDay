@@ -32,7 +32,7 @@ public class HomeNavbarPage extends BasePage {
         log.info("text in input");
     }
 
-    @Step("click on nutrition button")
+    @Step("click on add button")
     public void clickAddButton() {
         driver.findElement(ADD_BUTTON).click();
         log.info("click on add button");

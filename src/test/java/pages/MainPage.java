@@ -56,10 +56,10 @@ public class MainPage extends BasePage {
         return driver.findElement(TITLE_CATEGORIES).getText();
     }
 
-    @Step("Get error message")
+    @Step("Title forum message")
     public String getTextTitleOfForums() {
         log.info("get error message for forum title");
-        return driver.findElement(FORUMS_TITLE).getText();
+        return driver.findElement(TITLE_DISCUSSION_BOARDS).getText();
     }
 
     public MainPage(WebDriver driver) {

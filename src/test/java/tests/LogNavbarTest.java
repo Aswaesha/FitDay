@@ -11,7 +11,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.clickOnNavbar("LOG");
 
@@ -24,7 +26,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("LOG");
@@ -39,7 +43,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+       // homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("WEIGHT");
@@ -53,7 +59,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("MOOD");
@@ -67,7 +75,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("BODY");
@@ -81,7 +91,9 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        homePage.isPageOpen();
+        //homePage.isPageOpen();
+        driver.navigate().refresh();
+        Thread.sleep(5000);
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("CUSTOM");
