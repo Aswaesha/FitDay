@@ -16,7 +16,8 @@ public class LoginTest extends BaseTest {
 
         assertTrue(isHomePageOpened, "Страница HomePage не открылась");
     }
-    
+
+
     @Test(description = "Check login without user name")
     public void negativeLoginWithoutUsername() throws InterruptedException {
         loginPage.open()
