@@ -35,7 +35,7 @@ public class MainTest extends BaseTest {
         mainPage.listClickOnLearnMore();
         mainPage.listClickOnForums();
 
-        assertEquals(mainPage.getTextTitleOfForums(), "Forums", "Title is not found");
+        assertEquals(mainPage.getTextTitleOfForums(), "FitDay Discussion Boards", "Title is not found");
     }
 
     @Test(description = "Check title after click at Nutrition in All Categories")
