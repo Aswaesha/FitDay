@@ -7,7 +7,7 @@ pipeline {
     }
 
     parameters{
-        choice(choices: ['LoginTest', 'LogoTest', 'ProductsCriticalPathTest', 'SortTest'], name: 'TEST_NAME')
+        //choice(choices: ['LoginTest', 'LogoTest', 'ProductsCriticalPathTest', 'SortTest'], name: 'TEST_NAME')
         gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     }
 
