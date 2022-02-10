@@ -35,11 +35,11 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().browserVersion("97").setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        //.addArguments("headless");
         driver = new ChromeDriver(options);
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
         username = System.getenv().getOrDefault("QASE_USERNAME", utils.PropertyReader.getProperty("fitDay.username"));
