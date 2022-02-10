@@ -61,6 +61,7 @@ public class BaseTest {
         reportsNavbarPage = new ReportsNavbarPage(driver);
     }
 
+
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
