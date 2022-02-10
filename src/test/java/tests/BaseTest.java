@@ -35,7 +35,7 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
-        WebDriverManager.chromedriver().browserVersion("97.0.4692.71").setup();
+        WebDriverManager.chromedriver().browserVersion("97").setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
