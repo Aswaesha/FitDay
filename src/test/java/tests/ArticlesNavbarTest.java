@@ -8,21 +8,17 @@ import static org.testng.Assert.assertTrue;
 public class ArticlesNavbarTest extends BaseTest {
     @Test(description = "Open nutrition page across navbar")
     public void clickArticlesNutritionNavbar() throws InterruptedException {
-       // for (int turn = 0; turn < 20; turn++) {
+        loginPage.open();
+        loginPage.login(username, password);
 
-            loginPage.open();
-            loginPage.login(username, password);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.selectMenuOption("ARTICLES");
+        navbarPage.selectSecondMenuOption("NUTRITION");
 
-            navbarPage.selectMenuOption("ARTICLES");
-            navbarPage.selectSecondMenuOption("NUTRITION");
-
-            assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
-            AllureUtils.takeScreenshot(driver);
-           // driver.manage().deleteAllCookies();
-     //   }
+        assertTrue(articlesNavbarPage.checkoutTitle(), "Nutrition page is not open");
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Open articles across Navbar with click on articles")
@@ -30,9 +26,8 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("ARTICLES");
         navbarPage.isPageOpen();
@@ -46,8 +41,8 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES");
         navbarPage.selectSecondMenuOption("FITNESS");
@@ -64,9 +59,8 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES");
         navbarPage.selectSecondMenuOption("HOME");

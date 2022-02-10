@@ -36,13 +36,21 @@ public class NavbarPage extends BasePage {
 
     }
 
+
+    @Step("Refresh page")
+    public void refreshPage() throws InterruptedException {
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+        log.info("Refresh page");
+
+    }
+
     public NavbarPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isPageOpen() {
-        log.info("cheaclgfnc ");
         return isExist(TITLE_CATEGORIES);
     }
 

@@ -12,9 +12,8 @@ public class DietitianNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("DIETITIAN");
 
@@ -27,9 +26,8 @@ public class DietitianNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("DIETITIAN");
         navbarPage.selectSecondMenuOption("DETAILS");

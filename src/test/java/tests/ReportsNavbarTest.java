@@ -11,9 +11,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("CALORIE");
@@ -27,9 +26,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("NUTRITION");
@@ -43,9 +41,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("WEIGHT");
@@ -59,9 +56,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("BODY");
@@ -75,9 +71,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("MOOD");
@@ -91,9 +86,8 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
         navbarPage.selectSecondMenuOption("CUSTOM");

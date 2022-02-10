@@ -6,7 +6,6 @@ import models.AccountFactory;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 @Log4j2
 public class SingUpTest extends BaseTest {

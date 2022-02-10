@@ -6,14 +6,32 @@ import utils.AllureUtils;
 import static org.testng.Assert.assertEquals;
 
 public class LogNavbarTest extends BaseTest {
+    @Test(description = "Change weight data")
+    public void changeWeight() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
+
+        logNavbarPage.open("/app/log/weight#10FEB2022");
+
+        logNavbarPage.clickEditButton();
+        logNavbarPage.clickInput();
+        logNavbarPage.inputWeightText();
+        homeNavbarPage.clickSaveButton();
+
+        assertEquals(logNavbarPage.checkoutWeight(), "109.0 kgs", "Weight is not correct");
+        AllureUtils.takeScreenshot(driver);
+    }
+
     @Test(description = "Open food across Navbar with click on log")
     public void clickDietitianNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("LOG");
 
@@ -26,9 +44,8 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         AllureUtils.takeScreenshot(driver);
         navbarPage.selectMenuOption("LOG");
@@ -43,9 +60,8 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("WEIGHT");
@@ -59,9 +75,8 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("MOOD");
@@ -75,9 +90,8 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("BODY");
@@ -91,9 +105,8 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //homePage.isPageOpen();
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
         navbarPage.selectSecondMenuOption("CUSTOM");
