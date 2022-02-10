@@ -12,7 +12,7 @@ public class DietitianNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+       // navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("DIETITIAN");
@@ -26,7 +26,7 @@ public class DietitianNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("DIETITIAN");

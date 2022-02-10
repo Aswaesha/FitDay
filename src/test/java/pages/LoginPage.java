@@ -36,6 +36,8 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         Thread.sleep(3000);
+        driver.navigate().refresh();
+        Thread.sleep(5000);
         return new HomePage(driver);
     }
 

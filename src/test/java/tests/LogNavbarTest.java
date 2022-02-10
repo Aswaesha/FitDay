@@ -13,7 +13,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/log/weight#10FEB2022");
@@ -32,7 +32,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("LOG");
@@ -46,7 +46,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+       // navbarPage.refreshPage();
         homePage.isPageOpen();
 
         AllureUtils.takeScreenshot(driver);
@@ -62,7 +62,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+       // navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -77,7 +77,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -92,7 +92,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -107,7 +107,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -122,7 +122,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/log/body#10FEB2022");

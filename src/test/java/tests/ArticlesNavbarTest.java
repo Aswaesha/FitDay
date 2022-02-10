@@ -11,7 +11,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open();
         loginPage.login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES");
@@ -26,7 +26,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("ARTICLES");
@@ -41,7 +41,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES");
@@ -59,7 +59,7 @@ public class ArticlesNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("ARTICLES");
