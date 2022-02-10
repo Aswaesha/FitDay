@@ -1,6 +1,6 @@
 # **FitDay**
 https://www.fitday.com
-###MAIN PAGE
+###MAIN PAGE <br/>
 ####_Logo_:
 * The logo is displayed when opening the main page
 
