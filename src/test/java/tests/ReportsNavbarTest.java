@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import utils.AllureUtils;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class ReportsNavbarTest extends BaseTest {
     @Test(description = "Open calorie report across navbar")
@@ -93,6 +94,43 @@ public class ReportsNavbarTest extends BaseTest {
         navbarPage.selectSecondMenuOption("CUSTOM");
 
         assertEquals(reportsNavbarPage.checkoutReportsTitles(), "Custom Reports", "Custom report is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Check popup ")
+    public void checkPopUp() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
+
+        logNavbarPage.open("/app/reports/custom#10FEB2022");
+
+        reportsNavbarPage.clickPrimaryDropdown();
+        reportsNavbarPage.clickPrimaryDropdownValue("food");
+
+        reportsNavbarPage.clickSecondaryDropdown();
+        reportsNavbarPage.clickSecondaryDropdownValue("Calories");
+
+        homeNavbarPage.clickPlusButton();
+
+        assertTrue(logNavbarPage.checkoutPopup(), "Popup is not displayed");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Check table report")
+    public void checkTableReport() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
+
+        logNavbarPage.open("/app/reports/nutrition#10FEB2022");
+        reportsNavbarPage.clickLinkTable();
+
+        assertTrue(reportsNavbarPage.checkoutTable(), "Table is not displayed");
         AllureUtils.takeScreenshot(driver);
     }
 }

@@ -6,7 +6,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LogoTest extends BaseTest {
     @Test(description = "Logo is open on main page")
-    public void logoTest() throws InterruptedException{
+    public void logoTest() throws InterruptedException {
         loginPage.open()
                 .login(username, password)
                 .isPageOpen();
@@ -16,5 +16,4 @@ public class LogoTest extends BaseTest {
 
         assertTrue(logoIsHere, "Logo not show");
     }
-
 }

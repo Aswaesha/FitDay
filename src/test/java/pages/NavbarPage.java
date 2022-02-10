@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 public class NavbarPage extends BasePage {
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
-    //public static final By LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption) throws InterruptedException {
@@ -21,6 +20,7 @@ public class NavbarPage extends BasePage {
         action.moveToElement(we).build().perform();
         Thread.sleep(5000);
     }
+
     @Step("Click on items navbar")
     public void selectSecondMenuOption(String secondMenuOption) throws InterruptedException {
         Thread.sleep(5000);
@@ -33,16 +33,13 @@ public class NavbarPage extends BasePage {
     public void clickOnNavbar(String menuOption) {
         driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, menuOption))).click();
         log.info("click on articles navbar");
-
     }
-
 
     @Step("Refresh page")
     public void refreshPage() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
         log.info("Refresh page");
-
     }
 
     public NavbarPage(WebDriver driver) {

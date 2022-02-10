@@ -53,12 +53,13 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Check title after click on FitDay premium")
-    public void checkTitleClickPremium(){
+    public void checkTitleClickPremium() {
         loginPage.open();
         loginPage.clickFitDayPremium();
 
         assertEquals(loginPage.checkoutTitleAtProductPage(), "Premium $4.16 / month", "Title is not found");
     }
+
     @Test(description = "Check Check title after click on FitDay pc")
     public void checkTitleClickPc() {
         loginPage.open();

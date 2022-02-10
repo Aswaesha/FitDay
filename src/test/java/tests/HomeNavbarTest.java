@@ -123,5 +123,4 @@ public class HomeNavbarTest extends BaseTest {
         assertEquals(homeNavbarPage.checkDefaultChart(), "BMI", "Settings page is not open");
         AllureUtils.takeScreenshot(driver);
     }
-
 }

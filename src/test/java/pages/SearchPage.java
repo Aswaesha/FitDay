@@ -30,7 +30,4 @@ public class SearchPage extends BasePage{
     public boolean isPageOpen() {
         return isExist(SEARCH_RESULT_LINK);
     }
-
-
-
 }

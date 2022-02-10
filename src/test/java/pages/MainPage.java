@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 @Log4j2
 public class MainPage extends BasePage {
     public static final By LEARN_MORE_BUTTON = By.xpath("//ul[@class='dropdown']//li");
-    public static final By NUTRITION_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Nutrition']");
     public static final By NUTRITION_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Nutrition']");
-    public static final By FITNESS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Fitness']");
     public static final By FORUMS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Forums']");
+    public static final By FITNESS_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Fitness']");
+    public static final By NUTRITION_LINK = By.xpath("//ul[@class='dropdown']//ul[@class='sub_menu']//li//a[text()='Nutrition']");
 
     @Step("click on nutrition button")
     public void listClickOnNutritionButton() {
@@ -26,7 +26,6 @@ public class MainPage extends BasePage {
         driver.findElement(FITNESS_BUTTON).click();
         log.info("click on fitness button at all categories");
     }
-
 
     @Step("click on learn more button")
     public void listClickOnLearnMore() {
@@ -55,14 +54,11 @@ public class MainPage extends BasePage {
     @Step("Get text title")
     public String getTextTitleOfPage() {
         log.info("get error message for titles");
-
         new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
             }
         };
-
-
         return driver.findElement(TITLE_CATEGORIES).getText();
     }
 

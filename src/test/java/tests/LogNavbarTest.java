@@ -3,7 +3,9 @@ package tests;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
 
+
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LogNavbarTest extends BaseTest {
     @Test(description = "Change weight data")
@@ -112,6 +114,48 @@ public class LogNavbarTest extends BaseTest {
         navbarPage.selectSecondMenuOption("CUSTOM");
 
         assertEquals(homeNavbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Add new params at table")
+    public void addParamsBody() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
+
+        logNavbarPage.open("/app/log/body#10FEB2022");
+
+        logNavbarPage.clickAndAddOnParamsValue("neck");
+        logNavbarPage.clickAndAddOnParamsValue("bicep");
+        logNavbarPage.clickAndAddOnParamsValue("forearm");
+        logNavbarPage.clickAndAddOnParamsValue("chest");
+        logNavbarPage.clickAndAddOnParamsValue("waist");
+        logNavbarPage.clickAndAddOnParamsValue("hips");
+        logNavbarPage.clickAndAddOnParamsValue("thigh");
+        logNavbarPage.clickAndAddOnParamsValue("calf");
+        homeNavbarPage.clickSaveButton();
+
+        assertTrue(logNavbarPage.checkoutEditButton(), "Edit button page is not found");
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Change weight data")
+    public void checkPopUp() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.refreshPage();
+        homePage.isPageOpen();
+
+        logNavbarPage.open("/app/log/stats#10FEB2022");
+
+        logNavbarPage.clickDropdown();
+        logNavbarPage.clickDropdownValue("custom");
+        homeNavbarPage.clickPlusButton();
+
+        assertTrue(logNavbarPage.checkoutPopup(), "Popup is not displayed");
         AllureUtils.takeScreenshot(driver);
     }
 }
