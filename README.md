@@ -56,7 +56,6 @@ https://www.fitday.com
 * Add your mood at 'Today's Diary Entry'
 #### _Body_:
 * Hover on the 'LOG' button and click on the 'BODY' go to the page with the title 'Body Log'
-* Add your params at 'Today's Measurements'
 #### _Custom_
 * Hover on the 'LOG' button and click on the 'CUSTOM' go to the page with the title 'Custom Log'
 * Click on item at 'MEASUREMENT' and click on plus - Popup is displayed
@@ -69,8 +68,6 @@ https://www.fitday.com
 * Click on table link - Table 'Total Nutrition (Daily Average)' is displayed
 #### _Weight_:
 * Hover on the 'REPORTS' button and click on the 'WEIGHT' go to the page with the title 'Weight Report'
-#### _Body_:
-* Hover on the 'REPORTS' button and click on the 'BODY' go to the page with the title 'Body Report'
 #### _Mood_:
 * Hover on the 'REPORTS' button and click on the 'MOOD' go to the page with the title 'Mood Report'
 #### _Custom_:
