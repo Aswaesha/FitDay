@@ -37,6 +37,7 @@ public class BaseTest {
     public void setUp(ITestContext context) {
         WebDriverManager.chromedriver().setup();
 //.browserVersion("97")
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
