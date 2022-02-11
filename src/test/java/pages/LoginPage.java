@@ -41,6 +41,19 @@ public class LoginPage extends BasePage {
         return new HomePage(driver);
     }
 
+    @Step("Login process")
+    public HomePage loginError(String userName, String password) throws InterruptedException {
+        driver.findElement(USERNAME_INPUT).sendKeys(userName);
+        log.info("Enter user name ");
+        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        log.info("Enter password");
+        Thread.sleep(2000);
+        driver.findElement(LOGIN_BUTTON).click();
+        log.info("Click on login button");
+        Thread.sleep(3000);
+        return new HomePage(driver);
+    }
+
     @Step("Get error massage")
     public String getErrorMassageUsername() {
         log.info("get error massage for user name");

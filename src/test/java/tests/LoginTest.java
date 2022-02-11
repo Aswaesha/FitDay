@@ -17,11 +17,10 @@ public class LoginTest extends BaseTest {
         assertTrue(isHomePageOpened, "Страница HomePage не открылась");
     }
 
-
     @Test(description = "Check login without user name")
     public void negativeLoginWithoutUsername() throws InterruptedException {
         loginPage.open()
-                .login("", password)
+                .loginError("", password)
                 .isPageOpen();
 
         assertEquals(loginPage.getErrorMassageUsername(), "Username is required.", "Massage is not found");
@@ -30,7 +29,7 @@ public class LoginTest extends BaseTest {
     @Test(description = "Check login without user password")
     public void negativeLoginWithoutPassword() throws InterruptedException {
         loginPage.open()
-                .login(username, "")
+                .loginError(username, "")
                 .isPageOpen();
 
         assertEquals(loginPage.getErrorMassagePassword(), "Password is required.", "Massage is not found");
