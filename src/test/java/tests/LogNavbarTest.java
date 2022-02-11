@@ -117,30 +117,6 @@ public class LogNavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Add new params at table")
-    public void addParamsBody() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        //navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        logNavbarPage.open("/app/log/body#10FEB2022");
-
-        logNavbarPage.clickAndAddOnParamsValue("neck");
-        logNavbarPage.clickAndAddOnParamsValue("bicep");
-        logNavbarPage.clickAndAddOnParamsValue("forearm");
-        logNavbarPage.clickAndAddOnParamsValue("chest");
-        logNavbarPage.clickAndAddOnParamsValue("waist");
-        logNavbarPage.clickAndAddOnParamsValue("hips");
-        logNavbarPage.clickAndAddOnParamsValue("thigh");
-        logNavbarPage.clickAndAddOnParamsValue("calf");
-        homeNavbarPage.clickSaveButton();
-
-        assertTrue(logNavbarPage.checkoutEditButton(), "Edit button page is not found");
-        AllureUtils.takeScreenshot(driver);
-    }
-
     @Test(description = "Change weight data")
     public void checkPopUp() throws InterruptedException {
         loginPage.open()

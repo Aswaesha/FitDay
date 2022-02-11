@@ -9,7 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 
 @Log4j2
 public class LogNavbarPage extends BasePage {
-    public static final String PARAMS_BODY = "//input[@name='%s']";
     public static final By DROPDOWN = By.xpath("//select[@class='pkey']");
     public static final By WEIGHT_INPUT = By.xpath("//input[@name='weight']");
     public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='%s']";
@@ -20,18 +19,6 @@ public class LogNavbarPage extends BasePage {
     @Step("Check popup")
     public boolean checkoutPopup() {
         return driver.findElement(POPUP).isDisplayed();
-    }
-
-    @Step("Check edit button")
-    public boolean checkoutEditButton() {
-        return driver.findElement(EDIT_BUTTON).isDisplayed();
-    }
-
-    @Step("Click on item params")
-    public void clickAndAddOnParamsValue(String paramsOption) {
-        driver.findElement(By.xpath(String.format(PARAMS_BODY, paramsOption))).click();
-        driver.findElement(By.xpath(String.format(PARAMS_BODY, paramsOption))).sendKeys("40");
-        log.info("click on item params");
     }
 
     @Step("Click on dropdown params")
@@ -53,12 +40,6 @@ public class LogNavbarPage extends BasePage {
         log.info("click on input");
     }
 
-    //        @Step("Input text")
-//    public void inputParamsText(){
-//            List<WebElement> elements =  driver.findElements(By.xpath("//div[@id='j-body-body']//tbody//tr//td"));
-//            System.out.println("Number of elements:" +elements.size());
-//        log.info("text in input");
-//    }
     @Step("Input text")
     public void inputWeightText() {
         driver.findElement(WEIGHT_INPUT).sendKeys("109");
