@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -35,13 +37,20 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
-        WebDriverManager.chromedriver().setup();
-        //.browserVersion("97")
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
+        //WebDriverManager.chromedriver().browserVersion("97").setup();
+        //ChromeOptions options = new ChromeOptions();
+
+     //   WebDriver driver = new FirefoxDriver();
+//        options.addArguments("--start-maximized");
+//        driver = new ChromeDriver(options);
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+
+        driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
+
         username = System.getenv().getOrDefault("QASE_USERNAME", utils.PropertyReader.getProperty("fitDay.username"));
         password = System.getenv().getOrDefault("QASE_PASSWORD", utils.PropertyReader.getProperty("fitDay.password"));
 
