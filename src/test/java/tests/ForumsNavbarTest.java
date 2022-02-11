@@ -12,7 +12,7 @@ public class ForumsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("FORUMS");
@@ -26,7 +26,7 @@ public class ForumsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("FORUMS");

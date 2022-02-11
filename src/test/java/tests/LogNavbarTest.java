@@ -13,7 +13,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/log/weight#10FEB2022");
@@ -32,7 +32,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.clickOnNavbar("LOG");
@@ -46,7 +46,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         AllureUtils.takeScreenshot(driver);
@@ -62,7 +62,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -77,7 +77,7 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");
@@ -87,27 +87,12 @@ public class LogNavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-//    @Test(description = "Open body page across navbar")
-//    public void clickLogBodyNavbar() throws InterruptedException {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        //navbarPage.refreshPage();
-//        homePage.isPageOpen();
-//
-//        navbarPage.selectMenuOption("LOG");
-//        navbarPage.selectSecondMenuOption("BODY");
-//
-//        assertEquals(homeNavbarPage.checkoutTitles(), "Body Log", "Body page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
-
     @Test(description = "Open custom page across navbar")
     public void clickLogCustomNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("LOG");

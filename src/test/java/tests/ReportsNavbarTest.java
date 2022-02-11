@@ -12,7 +12,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -27,7 +27,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -42,7 +42,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -51,28 +51,13 @@ public class ReportsNavbarTest extends BaseTest {
         assertEquals(reportsNavbarPage.checkoutReportsTitles(), "Weight Report", "Weight report is not open");
         AllureUtils.takeScreenshot(driver);
     }
-//
-//    @Test(description = "Open body report across navbar")
-//    public void clickReportsBodyNavbar() throws InterruptedException {
-//        loginPage.open()
-//                .login(username, password);
-//
-//        //navbarPage.refreshPage();
-//        homePage.isPageOpen();
-//
-//        navbarPage.selectMenuOption("REPORTS");
-//        navbarPage.selectSecondMenuOption("BODY");
-//
-//        assertEquals(reportsNavbarPage.checkoutReportsTitles(), "Body Measurement Report", "Body report is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
 
     @Test(description = "Open mood report across navbar")
     public void clickReportsMoodNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -87,7 +72,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -102,7 +87,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/reports/custom#10FEB2022");
@@ -124,7 +109,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/reports/nutrition#10FEB2022");

@@ -13,7 +13,7 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         homeNavbarPage.open("/app/home/profile#09FEB2022");
@@ -48,7 +48,7 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open();
         loginPage.login(username, password);
 
-      //  navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         homeNavbarPage.clickAddActivityButton();
@@ -65,7 +65,7 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("HOME");
@@ -81,7 +81,7 @@ public class HomeNavbarTest extends BaseTest {
                 .login(username, password);
 
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("HOME");
@@ -96,7 +96,7 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       // navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("HOME");
@@ -111,7 +111,7 @@ public class HomeNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        //navbarPage.refreshPage();
+        navbarPage.refreshPage();
         homePage.isPageOpen();
 
         homeNavbarPage.open("/app/home/settings#10FEB2022");
