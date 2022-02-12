@@ -6,30 +6,36 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-public class ReportsNavbarPage extends BasePage {
-    public static final By TABLE_REPORT = By.xpath("//table[@class='ib-list']");
-    public static final By TABLE_LINK = By.xpath("//a[@class='nutri-total-table']");
+public class PremiumPackagePage extends BasePage {
+    public static final By PC_BUTTON = By.xpath("//li[@class='last']/a//span");
+    public static final By PRODUCTS_TITLE = By.xpath("//div[@class='Holder']//h1");
+    public static final By PREMIUM_BUTTON = By.xpath("//li[@class='first']/a//span");
     public static final By PRIMARY_DROPDOWN = By.xpath("//select[@class='primary']");
-    public static final By REPORTS_ITEM_TITLE = By.xpath("//div[@id='main-full']//h1");
     public static final By SECONDARY_DROPDOWN = By.xpath("//select[@class='secondary']");
     public static final String PRIMARY_DROPDOWN_VALUE = "//select[@class='primary']//option[@value='%s']";
     public static final String SECONDARY_DROPDOWN_VALUE = "//select[@class='secondary']//option[@value='%s']";
 
-    @Step("Check table")
-    public boolean checkoutTable() {
-        return driver.findElement(TABLE_REPORT).isDisplayed();
-    }
-
-    @Step("click on link table")
-    public void clickLinkTable() {
-        driver.findElement(TABLE_LINK).click();
-        log.info("click on link table");
+    @Step("Check title on products pages")
+    public String checkoutTitleAtProductPage() {
+        return driver.findElement(PRODUCTS_TITLE).getText();
     }
 
     @Step("click on primary dropdown")
     public void clickPrimaryDropdown() {
         driver.findElement(PRIMARY_DROPDOWN).click();
         log.info("click on primary dropdown");
+    }
+
+    @Step("Click on  FitDay Premium")
+    public void clickFitDayPremium() {
+        driver.findElement(PREMIUM_BUTTON).click();
+        log.info("click on FitDay Premium ");
+    }
+
+    @Step("Click on  FitDay PC")
+    public void clickFitDayPC() {
+        driver.findElement(PC_BUTTON).click();
+        log.info("click on FitDay PC");
     }
 
     @Step("click on secondary dropdown")
@@ -50,13 +56,7 @@ public class ReportsNavbarPage extends BasePage {
         log.info("click on secondary dropdown params");
     }
 
-    @Step("Check title after click on reports navbar")
-    public String checkoutReportsTitles() {
-        log.info("get title for reports");
-        return driver.findElement(REPORTS_ITEM_TITLE).getText();
-    }
-
-    public ReportsNavbarPage(WebDriver driver) {
+    public PremiumPackagePage(WebDriver driver) {
         super(driver);
     }
 
@@ -64,4 +64,5 @@ public class ReportsNavbarPage extends BasePage {
     public boolean isPageOpen() {
         return false;
     }
+
 }

@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
 
@@ -8,97 +9,51 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class LogNavbarTest extends BaseTest {
+
+    @Test(description = "Add food in dashboard")
+    public void addFoodAtDashboard() throws InterruptedException {
+        loginPage.open();
+        loginPage.login(username, password);
+
+        logNavbarPage.clickAddFoodButton();
+
+        logNavbarPage.inputFoodText();
+        logNavbarPage.clickPlusButton();
+
+        assertEquals(logNavbarPage.checkFoodTable(), "Apple, raw", "Food not found");
+        driver.manage().deleteAllCookies();
+        AllureUtils.takeScreenshot(driver);
+    }
+
+    @Test(description = "Add activity at dashboard")
+    public void addActivityAtDashboard() throws InterruptedException {
+        loginPage.open();
+        loginPage.login(username, password);
+
+        logNavbarPage.clickAddActivityButton();
+        logNavbarPage.inputActivityText();
+        logNavbarPage.clickPlusButton();
+        Thread.sleep(5000);
+        logNavbarPage.clickAddToActivityLogButton();
+        assertEquals(logNavbarPage.checkActivityTable(), "fast ballroom dancing", "Activity not found");
+        driver.manage().deleteAllCookies();
+        AllureUtils.takeScreenshot(driver);
+    }
+
     @Test(description = "Change weight data")
     public void changeWeight() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        logNavbarPage.open("/app/log/weight#10FEB2022");
+        logNavbarPage.open("/app/log/weight");
 
         logNavbarPage.clickEditButton();
         logNavbarPage.clickInput();
         logNavbarPage.inputWeightText();
-        homeNavbarPage.clickSaveButton();
+        logNavbarPage.clickSaveButton();
 
-        assertEquals(logNavbarPage.checkoutWeight(), "109.0 kgs", "Weight is not correct");
-        AllureUtils.takeScreenshot(driver);
-    }
-
-    @Test(description = "Open food across Navbar with click on log")
-    public void clickDietitianNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        navbarPage.clickOnNavbar("LOG");
-
-        assertEquals(homeNavbarPage.checkoutTitles(), "Food Log", "Food page is not open");
-        AllureUtils.takeScreenshot(driver);
-    }
-
-    @Test(description = "Open activity page across navbar")
-    public void clickLogActivityNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        AllureUtils.takeScreenshot(driver);
-        navbarPage.selectMenuOption("LOG");
-        navbarPage.selectSecondMenuOption("ACTIVITY");
-
-        assertEquals(homeNavbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
-        AllureUtils.takeScreenshot(driver);
-    }
-
-    @Test(description = "Open weight page across navbar")
-    public void clickLogWeightNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        navbarPage.selectMenuOption("LOG");
-        navbarPage.selectSecondMenuOption("WEIGHT");
-
-        assertEquals(homeNavbarPage.checkoutTitles(), "Weight Log", "Weight page is not open");
-        AllureUtils.takeScreenshot(driver);
-    }
-
-    @Test(description = "Open mood page across navbar")
-    public void clickLogMoodNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        navbarPage.selectMenuOption("LOG");
-        navbarPage.selectSecondMenuOption("MOOD");
-
-        assertEquals(homeNavbarPage.checkoutTitles(), "Mood Log", "Mood page is not open");
-        AllureUtils.takeScreenshot(driver);
-    }
-
-    @Test(description = "Open custom page across navbar")
-    public void clickLogCustomNavbar() throws InterruptedException {
-        loginPage.open()
-                .login(username, password);
-
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        navbarPage.selectMenuOption("LOG");
-        navbarPage.selectSecondMenuOption("CUSTOM");
-
-        assertEquals(homeNavbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
+        assertEquals(logNavbarPage.checkoutWeight(), "109.0 lbs", "Weight is not correct");
+        driver.manage().deleteAllCookies();
         AllureUtils.takeScreenshot(driver);
     }
 
@@ -107,16 +62,27 @@ public class LogNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
-        homePage.isPageOpen();
-
-        logNavbarPage.open("/app/log/stats#10FEB2022");
+        logNavbarPage.open("/app/log/stats");
 
         logNavbarPage.clickDropdown();
         logNavbarPage.clickDropdownValue("custom");
-        homeNavbarPage.clickPlusButton();
+        logNavbarPage.clickPlusButton();
 
         assertTrue(logNavbarPage.checkoutPopup(), "Popup is not displayed");
+        AllureUtils.takeScreenshot(driver);
+    }
+    @Test(description = "Add mood  at diary")
+    public void addMoodInDiary() throws InterruptedException {
+        loginPage.open()
+                .login(username, password);
+
+        logNavbarPage.open("/app/log/diary");
+        logNavbarPage.clickEditGreyButton();
+        logNavbarPage.inputMoodText();
+        logNavbarPage.clickSaveButton();
+
+        assertEquals(logNavbarPage.checkoutTextMood(), "I am happy", "Mood is not add");
+        driver.manage().deleteAllCookies();
         AllureUtils.takeScreenshot(driver);
     }
 }
