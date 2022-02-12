@@ -11,6 +11,7 @@ public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
+    public static final By HEADER_MENU = By.id("header-menu");
     public static final String BASE_URL = "https://www.fitday.com";
     public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
     public static final By TITLE_DISCUSSION_BOARDS = By.xpath("//h1//strong");
@@ -21,6 +22,7 @@ public abstract class BasePage {
     public static final By PLUS_BUTTON = By.xpath("//td[@class='actions']//a");
     public static final By PAGES_ITEM_TITLE = By.xpath("//div[@id='main']//h1");
     public static final By TITLE_CATEGORIES = By.xpath("//h2[@id='page-title']");
+    public static final By REPORTS_ITEM_TITLE = By.xpath("//div[@id='main-full']//h1");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
 
     public BasePage(WebDriver driver) {

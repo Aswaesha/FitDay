@@ -11,11 +11,8 @@ public class LoginPage extends BasePage {
     public static final By USER_INPUT = By.id("Username");
     public static final By USERNAME_INPUT = By.id("username");
     public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
-    public static final By PC_BUTTON = By.xpath("//li[@class='last']/a//span");
     public static final By PASSWORD_INPUT = By.xpath("//input[@type='password']");
     public static final By SING_UP_BUTTON = By.xpath("//input[@value='Sign Up']");
-    public static final By PRODUCTS_TITLE = By.xpath("//div[@class='Holder']//h1");
-    public static final By PREMIUM_BUTTON = By.xpath("//li[@class='first']/a//span");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
 
@@ -27,7 +24,7 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Login process")
-    public HomePage login(String userName, String password) throws InterruptedException {
+    public MainPage login(String userName, String password) throws InterruptedException {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
@@ -38,11 +35,11 @@ public class LoginPage extends BasePage {
         Thread.sleep(3000);
         driver.navigate().refresh();
         Thread.sleep(5000);
-        return new HomePage(driver);
+        return new MainPage(driver);
     }
 
     @Step("Login process")
-    public HomePage loginError(String userName, String password) throws InterruptedException {
+    public MainPage loginError(String userName, String password) throws InterruptedException {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
@@ -51,18 +48,13 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         Thread.sleep(3000);
-        return new HomePage(driver);
+        return new MainPage(driver);
     }
 
     @Step("Get error massage")
     public String getErrorMassageUsername() {
         log.info("get error massage for user name");
         return driver.findElement(ERROR_MASSAGE_NAME).getText();
-    }
-
-    @Step("Check title on products pages")
-    public String checkoutTitleAtProductPage() {
-        return driver.findElement(PRODUCTS_TITLE).getText();
     }
 
     @Step("Get error massage")
@@ -83,17 +75,6 @@ public class LoginPage extends BasePage {
         log.info("click on Create free account link");
     }
 
-    @Step("Click on  FitDay Premium")
-    public void clickFitDayPremium() {
-        driver.findElement(PREMIUM_BUTTON).click();
-        log.info("click on FitDay Premium ");
-    }
-
-    @Step("Click on  FitDay PC")
-    public void clickFitDayPC() {
-        driver.findElement(PC_BUTTON).click();
-        log.info("click on FitDay PC");
-    }
 
     @Step("Check input after click on I Forgot My Password")
     public boolean checkoutInputAtPage() {
@@ -113,6 +94,5 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
 
 }
