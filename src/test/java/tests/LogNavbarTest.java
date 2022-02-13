@@ -77,7 +77,7 @@ public class LogNavbarTest extends BaseTest {
                 .login(username, password);
 
         logNavbarPage.open("/app/log/diary");
-        logNavbarPage.clickEditGreyButton();
+       // logNavbarPage.clickEditGreyButton();
         logNavbarPage.inputMoodText();
         logNavbarPage.clickSaveButton();
 
