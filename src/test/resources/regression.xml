@@ -3,16 +3,13 @@
 <suite thread-count="3" name="Test suite" parallel="tests">
     <test name="test 1">
         <classes>
-            <class name="tests.ArticlesNavbarTest"/>
-            <class name="tests.HomeNavbarTest"/>
-            <class name="tests.LogoTest"/>
+            <class name="tests.NavbarTest"/>
         </classes>
     </test> <!-- Test -->
 
     <test name="test 2">
         <classes>
-           <class name="tests.DietitianNavbarTest"/>
-            <class name="tests.ReportsNavbarTest"/>
+            <class name="tests.PremiumPackageTest"/>
             <class name="tests.LoginTest"/>
             <class name="tests.MainTest"/>
 
@@ -21,9 +18,7 @@
 
     <test name="test 3">
         <classes>
-            <class name="tests.ForumsNavbarTest"/>
             <class name="tests.LogNavbarTest"/>
-            <class name="tests.SearchTest"/>
             <class name="tests.SingUpTest"/>
         </classes>
     </test> <!-- Test -->
