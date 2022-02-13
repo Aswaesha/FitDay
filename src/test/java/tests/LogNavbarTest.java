@@ -71,6 +71,7 @@ public class LogNavbarTest extends BaseTest {
         assertTrue(logNavbarPage.checkoutPopup(), "Popup is not displayed");
         AllureUtils.takeScreenshot(driver);
     }
+
     @Test(description = "Add mood  at diary")
     public void addMoodInDiary() throws InterruptedException {
         loginPage.open()
@@ -78,7 +79,7 @@ public class LogNavbarTest extends BaseTest {
 
         logNavbarPage.open("/app/log/diary");
 
-       // logNavbarPage.clickEditGreyButton();
+        logNavbarPage.clickEditGreyButton();
         logNavbarPage.inputMoodText();
         logNavbarPage.clickSaveButton();
 
