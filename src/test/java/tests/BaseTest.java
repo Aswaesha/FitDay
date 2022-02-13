@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,33 +11,26 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.*;
 
-
 import java.util.concurrent.TimeUnit;
 
+@Log4j2
 @Listeners(TestListener.class)
-public class BaseTest {
+public abstract class BaseTest {
     WebDriver driver;
     String username, password;
 
     LoginPage loginPage;
     SingUpPage singUpPage;
     SingUpModalPage singUpModalPage;
-    LogoPage logoPage;
-    HomePage homePage;
-    SearchPage searchPage;
     MainPage mainPage;
     NavbarPage navbarPage;
-    DietitianNavbarPage dietitianNavbarPage;
-    ForumsNavbarPage forumsNavbarPage;
-    ArticlesNavbarPage articlesNavbarPage;
-    HomeNavbarPage homeNavbarPage;
     LogNavbarPage logNavbarPage;
-    ReportsNavbarPage reportsNavbarPage;
+    PremiumPackagePage premiumPackagePage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestContext context) {
+        log.info("start test");
         WebDriverManager.chromedriver().setup();
-        //.browserVersion("97")
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
@@ -48,21 +42,16 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         singUpPage = new SingUpPage(driver);
         singUpModalPage = new SingUpModalPage(driver);
-        logoPage = new LogoPage(driver);
-        homePage = new HomePage(driver);
-        searchPage = new SearchPage(driver);
         mainPage = new MainPage(driver);
         navbarPage = new NavbarPage(driver);
-        dietitianNavbarPage = new DietitianNavbarPage(driver);
-        forumsNavbarPage = new ForumsNavbarPage(driver);
-        articlesNavbarPage = new ArticlesNavbarPage(driver);
-        homeNavbarPage = new HomeNavbarPage(driver);
         logNavbarPage = new LogNavbarPage(driver);
-        reportsNavbarPage = new ReportsNavbarPage(driver);
+        premiumPackagePage = new PremiumPackagePage(driver);
     }
+
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
+        log.info("finish test");
         driver.quit();
     }
 }
