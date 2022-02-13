@@ -1,7 +1,7 @@
 ## **FitDay**
 https://www.fitday.com
 
-#### _MAIN_:
+### _MAIN_:
 * Click on the 'Learn More' button and select 'Nutrition' go to the page with the title 'Nutrition'
 * Click on the 'Learn More' button and select 'Forums' go to the page with the title 'Forums'
 * Click on the 'Learn More' button and select 'Fitness' go to the page with the title 'Fitness'
