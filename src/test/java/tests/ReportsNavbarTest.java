@@ -12,7 +12,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -27,7 +27,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -42,7 +42,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -57,7 +57,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -72,7 +72,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -87,7 +87,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+       // navbarPage.refreshPage();
         homePage.isPageOpen();
 
         navbarPage.selectMenuOption("REPORTS");
@@ -102,7 +102,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-       navbarPage.refreshPage();
+       // navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/reports/custom#10FEB2022");
@@ -124,7 +124,7 @@ public class ReportsNavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        navbarPage.refreshPage();
+        //navbarPage.refreshPage();
         homePage.isPageOpen();
 
         logNavbarPage.open("/app/reports/nutrition#10FEB2022");
