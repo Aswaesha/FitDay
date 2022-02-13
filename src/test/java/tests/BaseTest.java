@@ -48,7 +48,6 @@ public abstract class BaseTest {
         premiumPackagePage = new PremiumPackagePage(driver);
     }
 
-
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         log.info("finish test");
