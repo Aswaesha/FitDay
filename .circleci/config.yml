@@ -13,7 +13,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
-      - run: mvn clean test -DsuiteXmlFile='src/test/resources/regression.xml'
+      - run: mvn dependency:go-offline
       - save_cache:
           paths:
             - ~/.m2
@@ -21,7 +21,7 @@ jobs:
 
       - run:
           name: Running tests
-          command: mvn clean test
+          command: mvn clean test -DsuiteXmlFile=regression.xml
       - run:
           name: Generate allure report
           command: mvn allure:report
