@@ -116,6 +116,7 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Input text")
     public void inputFoodText() throws InterruptedException {
+        Thread.sleep(3000);
         driver.findElement(INPUT_TEXT).sendKeys("apple");
         Thread.sleep(5000);
         log.info("text in input");
@@ -123,6 +124,7 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Input text")
     public void inputActivityText() throws InterruptedException {
+        Thread.sleep(3000);
         driver.findElement(INPUT_TEXT).sendKeys("Dancing");
         Thread.sleep(5000);
         log.info("text in input");
