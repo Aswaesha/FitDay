@@ -24,6 +24,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+
     </properties>
     <build>
         <plugins>
@@ -32,11 +34,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.4</version>
                 <configuration>
-                    <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar
-                        -Xmx256m
-                    </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
+<!--                <configuration>-->
+<!--                    <argLine>-->
+<!--                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar-->
+<!--                        -Xmx256m-->
+<!--                    </argLine>-->
+<!--                </configuration>-->
             </plugin>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
