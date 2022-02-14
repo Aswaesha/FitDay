@@ -7,6 +7,7 @@ jobs:
   ui-tests:
     docker:
       - image: circleci/openjdk:11.0.8-jdk-browsers
+        parallelism: 4
     steps:
       - checkout
       - restore_cache:
@@ -21,7 +22,7 @@ jobs:
 
       - run:
           name: Running tests
-          command: mvn clean test -DsuiteXmlFile='src/test/resources/regression.xml'
+          command: mvn clean test
       - run:
           name: Generate allure report
           command: mvn allure:report
