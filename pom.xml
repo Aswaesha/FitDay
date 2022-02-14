@@ -24,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-            <suiteXmlFile>regression.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/regression.xml</suiteXmlFile>
 
     </properties>
     <build>
