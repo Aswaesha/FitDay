@@ -3,6 +3,7 @@ package pages;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,12 +16,11 @@ public class NavbarPage extends BasePage {
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption) throws InterruptedException {
+    public void selectMenuOption(String firstMenuOption) {
         log.info("click start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
-        Thread.sleep(5000);
     }
 
     @Step("Check title after click on home in settings navbar")
@@ -30,11 +30,11 @@ public class NavbarPage extends BasePage {
     }
 
     @Step("Click on items navbar")
-    public void selectSecondMenuOption(String secondMenuOption) throws InterruptedException {
-        Thread.sleep(5000);
-        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-        Thread.sleep(5000);
+    public void selectSecondMenuOption(String secondMenuOption){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption);
+        //driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         log.info("click on item articles navbar");
+
     }
 
     @Step("Check calendar after click on calendar in home navbar")

@@ -5,6 +5,8 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static pages.NavbarPage.MAIN_ITEM_NAVBAR;
+
 
 @Log4j2
 public class LoginPage extends BasePage {
@@ -22,32 +24,31 @@ public class LoginPage extends BasePage {
         log.info("open page login");
         return this;
     }
-
+    private int count;
     @Step("Login process")
-    public MainPage login(String userName, String password) throws InterruptedException {
+    public MainPage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         log.info("Enter password");
-        Thread.sleep(2000);
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-        Thread.sleep(5000);
+        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10){
+            count++;
+            log.info("###### attempt number: " + count);
+            login(userName, password);
+        }
         return new MainPage(driver);
     }
 
     @Step("Login process")
-    public MainPage loginError(String userName, String password) throws InterruptedException {
+    public MainPage loginError(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         log.info("Enter user name ");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         log.info("Enter password");
-        Thread.sleep(2000);
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-        Thread.sleep(3000);
         return new MainPage(driver);
     }
 
