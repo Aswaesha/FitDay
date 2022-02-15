@@ -40,6 +40,7 @@ public abstract class BaseTest {
         if (browser.contains("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--start-maximized");
             options.addArguments("--disable-popup-blocking");
             driver = new ChromeDriver(options);
@@ -47,6 +48,7 @@ public abstract class BaseTest {
         } else if (browser.contains("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options=new FirefoxOptions();
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--start-maximized");
             options.addArguments("--disable-popup-blocking");
             driver = new FirefoxDriver();
