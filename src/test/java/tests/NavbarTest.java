@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class NavbarTest extends BaseTest {
-    @Test(description = "Open articles across Navbar with click on dietitian", groups = {"NavbarTest1"})
+    @Test(description = "Open articles across Navbar with click on dietitian", groups = "NavbarTest1")
     public void clickDietitianNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -18,7 +18,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open details page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open details page across navbar",groups =  "NavbarTest1" )
     public void clickDietitianDetailsNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -30,7 +30,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open nutrition page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open nutrition page across navbar",groups =  "NavbarTest1" )
     public void clickArticlesNutritionNavbar() throws InterruptedException {
         loginPage.open();
         loginPage.login(username, password);
@@ -42,7 +42,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open articles across Navbar with click on articles",groups = { "NavbarTest1" })
+    @Test(description = "Open articles across Navbar with click on articles",groups =  "NavbarTest1" )
     public void clickArticlesNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -54,7 +54,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open fitness page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open fitness page across navbar",groups =  "NavbarTest1" )
     public void clickArticlesFitnessNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -68,7 +68,7 @@ public class NavbarTest extends BaseTest {
         driver.manage().deleteAllCookies();
     }
 
-    @Test(description = "Open home page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open home page across navbar",groups =  "NavbarTest1" )
     public void clickArticlesHomeNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -81,7 +81,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open forums across Navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open forums across Navbar",groups = "NavbarTest1" )
     public void clickForumNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -92,7 +92,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open forum page across navbar forums home",groups = { "NavbarTest1" })
+    @Test(description = "Open forum page across navbar forums home",groups =  "NavbarTest1" )
     public void clickForumsHomeNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -104,7 +104,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open calendar page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open calendar page across navbar",groups =  "NavbarTest1" )
     public void clickHomeCalendarNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -116,7 +116,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open profile page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open profile page across navbar",groups = "NavbarTest1" )
     public void clickHomeProfileNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -128,7 +128,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open settings page across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open settings page across navbar",groups =  "NavbarTest1" )
     public void clickSettingsHomeNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -140,7 +140,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open calorie report across navbar",groups = { "NavbarTest1" })
+    @Test(description = "Open calorie report across navbar",groups = "NavbarTest1" )
     public void clickReportsCalorieNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -151,8 +151,7 @@ public class NavbarTest extends BaseTest {
         assertEquals(navbarPage.checkoutReportsTitles(), "Calories", "Calorie report is not open");
         AllureUtils.takeScreenshot(driver);
     }
-
-    @Test(description = "Open nutrition report across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open nutrition report across navbar",groups =  "NavbarTest2")
     public void clickReportsNutritionNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -164,7 +163,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open weight report across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open weight report across navbar",groups =  "NavbarTest2" )
     public void clickReportsWeightNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -176,7 +175,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open mood report across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open mood report across navbar",groups =  "NavbarTest2" )
     public void clickReportsMoodNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -188,7 +187,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open custom report across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open custom report across navbar",groups =  "NavbarTest2" )
     public void clickReportsCustomNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -200,7 +199,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open food across Navbar with click on log",groups = { "NavbarTest2" })
+    @Test(description = "Open food across Navbar with click on log",groups =  "NavbarTest2" )
     public void clickLogDietitianNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -211,7 +210,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open activity page across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open activity page across navbar",groups =  "NavbarTest2" )
     public void clickLogActivityNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -224,7 +223,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open weight page across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open weight page across navbar",groups = "NavbarTest2" )
     public void clickLogWeightNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -236,7 +235,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open mood page across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open mood page across navbar",groups =  "NavbarTest2" )
     public void clickLogMoodNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -248,7 +247,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open custom page across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open custom page across navbar")
     public void clickLogCustomNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -260,7 +259,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open body page across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open body page across navbar")
     public void clickLogBodyNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
@@ -272,7 +271,7 @@ public class NavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Open body report across navbar",groups = { "NavbarTest2" })
+    @Test(description = "Open body report across navbar")
     public void clickReportsBodyNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
