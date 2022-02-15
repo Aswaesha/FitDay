@@ -5,10 +5,14 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 import pages.*;
 
 import java.util.concurrent.TimeUnit;
@@ -27,13 +31,35 @@ public abstract class BaseTest {
     LogNavbarPage logNavbarPage;
     PremiumPackagePage premiumPackagePage;
 
+    @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
-    public void setUp(ITestContext context) {
+    public void setUp(ITestContext context,@Optional("chrome") String browser) {
         log.info("start test");
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
+        log.info(browser);
+
+        if (browser.contains("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+            driver = new ChromeDriver(options);
+
+        } else if (browser.contains("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            FirefoxOptions options=new FirefoxOptions();
+            options.addArguments("--start-maximized");
+            driver = new FirefoxDriver();
+
+        } else if (browser.contains("opera")) {
+            WebDriverManager.operadriver().setup();
+            OperaOptions options = new OperaOptions();
+            options.addArguments("--start-maximized");
+            driver = new OperaDriver(options);
+
+        } else if (browser.contains("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
         username = System.getenv().getOrDefault("QASE_USERNAME", utils.PropertyReader.getProperty("fitDay.username"));
