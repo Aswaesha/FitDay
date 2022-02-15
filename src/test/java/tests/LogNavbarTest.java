@@ -52,7 +52,7 @@ public class LogNavbarTest extends BaseTest {
         logNavbarPage.inputWeightText();
         logNavbarPage.clickSaveButton();
 
-        assertEquals(logNavbarPage.checkoutWeight(), "109.0 lbs", "Weight is not correct");
+        assertEquals(logNavbarPage.checkoutWeight(), "109.0 kgs", "Weight is not correct");
         driver.manage().deleteAllCookies();
         AllureUtils.takeScreenshot(driver);
     }

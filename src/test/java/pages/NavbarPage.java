@@ -16,25 +16,48 @@ public class NavbarPage extends BasePage {
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption) {
+    public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
         log.info("click start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, firstMenuOption))) && count < 10) {
+            count++;
+            log.info("###### attempt1 number: " + count);
+            driver.navigate().refresh();
+        }
+
+        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count < 10) {
+            count++;
+            log.info("###### attempt2 number: " + count);
+            driver.navigate().refresh();
+
+
+        }
     }
 
+    private int count;
+
+    //    @Step("Click on items navbar")
+//    public void selectSecondMenuOption(String secondMenuOption){
+//        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR);
+//       //((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption);
+//        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+//                if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count < 10){
+//            count++;
+//            log.info("###### attempt number: " + count);
+//                    driver.navigate().refresh();
+//
+//        }
+//        log.info("click on item articles navbar");
+//
+//    }
     @Step("Check title after click on home in settings navbar")
     public String checkoutTitles() {
         log.info("get title for settings page");
+
         return driver.findElement(PAGES_ITEM_TITLE).getText();
-    }
-
-    @Step("Click on items navbar")
-    public void selectSecondMenuOption(String secondMenuOption){
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption);
-        //driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-        log.info("click on item articles navbar");
-
     }
 
     @Step("Check calendar after click on calendar in home navbar")

@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
         log.info("open page login");
         return this;
     }
-   // private int count;
+    private int count;
     @Step("Login process")
     public MainPage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
@@ -33,11 +33,11 @@ public class LoginPage extends BasePage {
         log.info("Enter password");
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-//        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10){
-//            count++;
-//            log.info("###### attempt number: " + count);
-//            login(userName, password);
-//        }
+        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10){
+            count++;
+            log.info("###### attempt number: " + count);
+            login(userName, password);
+        }
         return new MainPage(driver);
     }
 
