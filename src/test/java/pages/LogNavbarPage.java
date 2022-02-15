@@ -14,17 +14,17 @@ public class LogNavbarPage extends BasePage {
     public static final By MOOD_INPUT = By.xpath("//textarea[@name='text']");
     public static final By WEIGHT_INPUT = By.xpath("//input[@name='weight']");
     public static final By EDIT_BUTTON_GREY = By.xpath("//a[@class='edit button grey']");
-    public static final By ACTIVITY_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()-1]//td[@class='name']");
+    public static final By TIME_ACTIVITY_INPUT = By.xpath("//input[@class='hours valid']");
     public static final By ADD_FOOD_BUTTON = By.xpath("//tr//td[1]//a//span[text()='Add »']");
     public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='%s']";
     public static final By WEIGHT_VALUE = By.xpath("//td[text()='Weight']//ancestor::tr//td[3]");
     public static final By POPUP = By.xpath("//div[@class='content fd_premium_lightbox green']");
     public static final By PROFILE_TITLE = By.xpath("//div[@id='profile-top']//div[@class='title']");
     public static final By ADD_TO_ACTIVITY_LOG_BUTTON = By.xpath("//div[@class='right']//a//span[2]");
-    public static final By INPUT_TEXT = By.xpath("//form[@class='fd-search-bar']//input[@type='text']");
     public static final By FOOD_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()]//td/a");
+    public static final By INPUT_TEXT = By.xpath("//form[@class='fd-search-bar']//input[@type='text']");
     public static final By ADD_ACTIVITY_BUTTON = By.xpath("//tr//td[2]//a[@class='add button']//span[2]");
-    public static final By TIME_ACTIVITY_INPUT = By.xpath("//input[@class='hours valid']");
+    public static final By ACTIVITY_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()-1]//td[@class='name']");
 
     @Step("Check popup")
     public boolean checkoutPopup() {
@@ -67,11 +67,13 @@ public class LogNavbarPage extends BasePage {
         driver.findElement(PLUS_BUTTON).click();
         log.info("click on plus button");
     }
+
     @Step("click on edit button")
     public void clickEditButton() {
         driver.findElement(EDIT_BUTTON).click();
         log.info("click on edit button");
     }
+
     @Step("click on edit button")
     public void clickEditGreyButton() {
         driver.findElement(EDIT_BUTTON_GREY).click();
@@ -141,13 +143,13 @@ public class LogNavbarPage extends BasePage {
         log.info("text in input");
     }
 
-    @Step("Input time")
-    public void inputTime(){
-        driver.findElement(TIME_ACTIVITY_INPUT).click();
-        driver.findElement(TIME_ACTIVITY_INPUT).clear();
-        driver.findElement(TIME_ACTIVITY_INPUT).sendKeys("1");
-        log.info("text time");
-    }
+//    @Step("Input time")
+//    public void inputTime() {
+//        driver.findElement(TIME_ACTIVITY_INPUT).click();
+//        driver.findElement(TIME_ACTIVITY_INPUT).clear();
+//        driver.findElement(TIME_ACTIVITY_INPUT).sendKeys("1");
+//        log.info("text time");
+//    }
 
     @Step("Input text")
     public void inputWeightText() {

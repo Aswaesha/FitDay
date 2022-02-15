@@ -75,7 +75,6 @@ public class LoginPage extends BasePage {
         log.info("click on Create free account link");
     }
 
-
     @Step("Check input after click on I Forgot My Password")
     public boolean checkoutInputAtPage() {
         return driver.findElement(USER_INPUT).isDisplayed();

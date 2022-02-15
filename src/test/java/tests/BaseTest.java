@@ -41,18 +41,21 @@ public abstract class BaseTest {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("disable-popup-blocking");
             driver = new ChromeDriver(options);
 
         } else if (browser.contains("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options=new FirefoxOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("disable-popup-blocking");
             driver = new FirefoxDriver();
 
         } else if (browser.contains("opera")) {
             WebDriverManager.operadriver().setup();
             OperaOptions options = new OperaOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("disable-popup-blocking");
             driver = new OperaDriver(options);
 
         } else if (browser.contains("edge")) {
