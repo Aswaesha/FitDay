@@ -9,7 +9,7 @@
         </classes>
     </test> <!-- Test -->
     <test name="test 2">
-        <parameter name="browser" value="opera"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.PremiumPackageTest"/>
             <class name="tests.LogNavbarTest"/>
@@ -41,7 +41,7 @@
     </test> <!-- Test -->
 
     <test name="test 4">
-        <parameter name="browser" value="edge"/>
+        <parameter name="browser" value="chrome"/>
             <classes>
                 <class name="tests.NavbarTest">
                     <methods>
