@@ -2,32 +2,58 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="4" name="Test suite" parallel="tests">
     <test name="test 1">
-        <groups>
-            <run>
-                <include name="NavbarTest1"/>
-            </run>
-        </groups>
-    </test> <!-- Test -->
-
-    <test name="test 2">
-        <groups>
-            <run>
-                <include name="NavbarTest2"/>
-            </run>
-        </groups>
-    </test> <!-- Test -->
-
-    <test name="test 3">
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.MainTest"/>
         </classes>
     </test> <!-- Test -->
-    <test name="test 3">
+    <test name="test 2">
         <classes>
             <class name="tests.PremiumPackageTest"/>
             <class name="tests.LogNavbarTest"/>
             <class name="tests.SingUpTest"/>
         </classes>
     </test> <!-- Test -->
+
+
+    <test name="test 3">
+        <classes>
+            <class name="tests.NavbarTest">
+                <methods>
+                    <include name="clickDietitianNavbar" />
+                    <include name="clickDietitianDetailsNavbar" />
+                    <include name="clickArticlesNutritionNavbar" />
+                    <include name="clickArticlesNavbar" />
+                    <include name="clickArticlesFitnessNavbar" />
+                    <include name="clickArticlesHomeNavbar" />
+                    <include name="clickForumNavbar" />
+                    <include name="clickForumsHomeNavbar" />
+                    <include name="clickHomeCalendarNavbar" />
+                    <include name="clickHomeProfileNavbar" />
+                    <include name="clickSettingsHomeNavbar" />
+                    <include name="clickReportsCalorieNavbar" />
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test -->
+    <test name="test 4">
+            <classes>
+                <class name="tests.NavbarTest">
+                    <methods>
+                        <include name="clickReportsNutritionNavbar" />
+                        <include name="clickReportsWeightNavbar" />
+                        <include name="clickReportsMoodNavbar" />
+                        <include name="clickReportsCustomNavbar" />
+                        <include name="clickLogDietitianNavbar" />
+                        <include name="clickLogActivityNavbar" />
+                        <include name="clickLogWeightNavbar" />
+                        <include name="clickLogMoodNavbar" />
+                        <include name="clickLogCustomNavbar" />
+                        <include name="clickLogBodyNavbar" />
+                        <include name="clickReportsBodyNavbar" />
+                    </methods>
+                </class>
+            </classes>
+        </test> <!-- Test -->
+
 </suite>
