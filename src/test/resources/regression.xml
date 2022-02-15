@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" name="Test suite" parallel="tests">
+<suite thread-count="4" name="Test suite" parallel="tests">
     <test name="test 1">
-        <classes>
-            <class name="tests.NavbarTest"/>
-        </classes>
+        <groups>
+            <run>
+                <include name="NavbarTest1"/>
+            </run>
+        </groups>
     </test> <!-- Test -->
 
     <test name="test 2">
-        <classes>
-            <class name="tests.PremiumPackageTest"/>
-            <class name="tests.LoginTest"/>
-            <class name="tests.MainTest"/>
-
-        </classes>
+        <groups>
+            <run>
+                <include name="NavbarTest2"/>
+            </run>
+        </groups>
     </test> <!-- Test -->
 
     <test name="test 3">
         <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.MainTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="test 3">
+        <classes>
+            <class name="tests.PremiumPackageTest"/>
             <class name="tests.LogNavbarTest"/>
             <class name="tests.SingUpTest"/>
         </classes>
