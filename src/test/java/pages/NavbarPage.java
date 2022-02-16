@@ -22,24 +22,27 @@ public class NavbarPage extends BasePage {
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
         log.info("hover finish and start click");
-//        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, firstMenuOption))) && count < 10) {
-//            count++;
-//            log.info("###### attempt1 number: " + count);
-//            driver.navigate().refresh();
-//        }
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, firstMenuOption))) && count < 10) {
+            count++;
+            log.info("###### attempt1 number: " + count);
+            driver.navigate().refresh();
+
+        }
 
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-//        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count < 10) {
-//            count++;
-//            log.info("###### attempt2 number: " + count);
-//            driver.navigate().refresh();
-
-
-        //}
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
+            count2++;
+            log.info("###### attempt2 number: " + count2);
+            driver.navigate().refresh();
+            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
+            action.moveToElement(we1).build().perform();
+            driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+        }
         log.info("finish click");
     }
 
-   // private int count;
+    private int count;
+    private int count2;
 
     //    @Step("Click on items navbar")
 //    public void selectSecondMenuOption(String secondMenuOption){
