@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
     @Test(description = "Check positive login process")
-    public void positiveLogin() throws InterruptedException {
+    public void positiveLogin(){
         loginPage
                 .open()
                 .login(username, password);
@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Check login without user name")
-    public void negativeLoginWithoutUsername() throws InterruptedException {
+    public void negativeLoginWithoutUsername(){
         loginPage.open()
                 .loginError("", password);
 
@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Check login without user password")
-    public void negativeLoginWithoutPassword() throws InterruptedException {
+    public void negativeLoginWithoutPassword(){
         loginPage.open()
                 .loginError(username, "");
 

@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 public class LogNavbarTest extends BaseTest {
 
     @Test(description = "Add food in dashboard")
-    public void addFoodAtDashboard() throws InterruptedException {
+    public void addFoodAtDashboard(){
         loginPage.open();
         loginPage.login(username, password);
 
@@ -26,14 +26,13 @@ public class LogNavbarTest extends BaseTest {
     }
 
     @Test(description = "Add activity at dashboard")
-    public void addActivityAtDashboard() throws InterruptedException {
+    public void addActivityAtDashboard() {
         loginPage.open();
         loginPage.login(username, password);
 
         logNavbarPage.clickAddActivityButton();
         logNavbarPage.inputActivityText();
         logNavbarPage.clickPlusButton();
-        Thread.sleep(5000);
         logNavbarPage.clickAddToActivityLogButton();
         assertEquals(logNavbarPage.checkActivityTable(), "fast ballroom dancing", "Activity not found");
         driver.manage().deleteAllCookies();
@@ -41,7 +40,7 @@ public class LogNavbarTest extends BaseTest {
     }
 
     @Test(description = "Change weight data")
-    public void changeWeight() throws InterruptedException {
+    public void changeWeight(){
         loginPage.open()
                 .login(username, password);
 
@@ -58,7 +57,7 @@ public class LogNavbarTest extends BaseTest {
     }
 
     @Test(description = "Change weight data")
-    public void checkPopUp() throws InterruptedException {
+    public void checkPopUp(){
         loginPage.open()
                 .login(username, password);
 
@@ -73,7 +72,7 @@ public class LogNavbarTest extends BaseTest {
     }
 
     @Test(description = "Add mood  at diary")
-    public void addMoodInDiary() throws InterruptedException {
+    public void addMoodInDiary() {
         loginPage.open()
                 .login(username, password);
 

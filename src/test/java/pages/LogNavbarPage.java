@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.concurrent.TimeUnit;
+
 
 @Log4j2
 public class LogNavbarPage extends BasePage {
@@ -28,13 +30,14 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Check popup")
     public boolean checkoutPopup() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(POPUP).isDisplayed();
     }
 
     @Step("Check  food at table")
-    public String checkFoodTable() throws InterruptedException {
+    public String checkFoodTable() {
         log.info("get food at table");
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(FOOD_ITEM).getText();
     }
 
@@ -65,6 +68,7 @@ public class LogNavbarPage extends BasePage {
     @Step("click on plus button")
     public void clickPlusButton() {
         driver.findElement(PLUS_BUTTON).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on plus button");
     }
 
@@ -81,9 +85,9 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("click on save button")
-    public void clickSaveButton() throws InterruptedException {
+    public void clickSaveButton() {
         driver.findElement(SAVE_BUTTON).click();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on save button");
     }
 
@@ -100,8 +104,8 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Click on to activity log add button")
-    public void clickAddToActivityLogButton() throws InterruptedException {
-        Thread.sleep(5000);
+    public void clickAddToActivityLogButton(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(ADD_TO_ACTIVITY_LOG_BUTTON).click();
         log.info("click on to activity log add button");
     }
@@ -120,26 +124,26 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Input text")
-    public void inputFoodText() throws InterruptedException {
-        Thread.sleep(3000);
+    public void inputFoodText(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(INPUT_TEXT).sendKeys("apple");
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");
     }
 
     @Step("Input text")
-    public void inputActivityText() throws InterruptedException {
-        Thread.sleep(3000);
+    public void inputActivityText(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(INPUT_TEXT).sendKeys("Dancing");
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");
     }
 
     @Step("Input mood text")
-    public void inputMoodText() throws InterruptedException {
+    public void inputMoodText(){
         driver.findElement(MOOD_INPUT).clear();
         driver.findElement(MOOD_INPUT).sendKeys("I am happy");
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");
     }
 

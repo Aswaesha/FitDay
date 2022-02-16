@@ -24,7 +24,7 @@ public class PremiumPackageTest extends BaseTest {
     }
 
     @Test(description = "Check popup ")
-    public void checkPopUp() throws InterruptedException {
+    public void checkPopUp(){
         loginPage.open()
                 .login(username, password);
 

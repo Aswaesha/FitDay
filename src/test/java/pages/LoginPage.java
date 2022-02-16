@@ -5,6 +5,8 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 import static pages.NavbarPage.MAIN_ITEM_NAVBAR;
 
 
@@ -49,6 +51,7 @@ public class LoginPage extends BasePage {
         log.info("Enter password");
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return new MainPage(driver);
     }
 

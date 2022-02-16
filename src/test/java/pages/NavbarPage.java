@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.concurrent.TimeUnit;
+
 @Log4j2
 public class NavbarPage extends BasePage {
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
@@ -22,16 +24,18 @@ public class NavbarPage extends BasePage {
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
         log.info("hover finish and start click");
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
             count2++;
             log.info("###### attempt2 number: " + count2);
             driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
             action.moveToElement(we1).build().perform();
             driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         }
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("finish click");
     }
 
