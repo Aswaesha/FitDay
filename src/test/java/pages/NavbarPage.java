@@ -64,12 +64,15 @@ public class NavbarPage extends BasePage {
     @Step("Check title after click on home in settings navbar")
     public String checkoutTitles() {
         log.info("get title for settings page");
-
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(PAGES_ITEM_TITLE).getText();
     }
 
     @Step("Check calendar after click on calendar in home navbar")
     public boolean checkoutCalendarTable() {
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(CALENDAR_TABLE).isDisplayed();
     }
 
@@ -105,6 +108,8 @@ public class NavbarPage extends BasePage {
     @Step("Check title after click on reports navbar")
     public String checkoutReportsTitles() {
         log.info("get title for reports");
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(REPORTS_ITEM_TITLE).getText();
     }
 

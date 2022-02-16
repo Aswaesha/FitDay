@@ -44,12 +44,16 @@ public class LogNavbarPage extends BasePage {
     @Step("Check title after click on home in profile navbar")
     public String checkoutTitleHomeProfile() {
         log.info("get title for profile page");
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(PROFILE_TITLE).getText();
     }
 
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(MOOD).getText();
     }
 
