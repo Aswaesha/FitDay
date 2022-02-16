@@ -15,6 +15,8 @@ public class NavbarTest extends BaseTest {
     public void clickDietitianNavbar(){
         loginPage.open()
                 .login(username, password);
+driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         navbarPage.clickOnNavbar("DIETITIAN");
 
@@ -26,9 +28,11 @@ public class NavbarTest extends BaseTest {
     public void clickDietitianDetailsNavbar(){
         loginPage.open()
                 .login(username, password);
-driver.navigate().refresh();
+        driver.findElement(By.id("profile-link")).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        navbarPage.clickOnNavbar("LOG");
+//driver.navigate().refresh();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("DIETITIAN","DETAILS");
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[span[text()='DIETITIAN']]")));
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='DETAILS']")));
@@ -41,7 +45,9 @@ driver.navigate().refresh();
     public void clickArticlesNutritionNavbar(){
         loginPage.open();
         loginPage.login(username, password);
-        navbarPage.clickOnNavbar("LOG");
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","NUTRITION");
 
 
@@ -53,7 +59,8 @@ driver.navigate().refresh();
     public void clickArticlesNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.clickOnNavbar("ARTICLES");
         navbarPage.isPageOpen();
 
@@ -65,6 +72,9 @@ driver.navigate().refresh();
     public void clickArticlesFitnessNavbar(){
         loginPage.open()
                 .login(username, password);
+
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","FITNESS");
         navbarPage.isPageOpen();
@@ -78,6 +88,8 @@ driver.navigate().refresh();
     public void clickArticlesHomeNavbar(){
         loginPage.open()
                 .login(username, password);
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","HOME");
         navbarPage.isPageOpen();
@@ -90,7 +102,8 @@ driver.navigate().refresh();
     public void clickForumNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.clickOnNavbar("FORUMS");
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
@@ -101,7 +114,9 @@ driver.navigate().refresh();
     public void clickForumsHomeNavbar(){
         loginPage.open()
                 .login(username, password);
-        navbarPage.clickOnNavbar("LOG");
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("FORUMS","HOME");
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
@@ -112,8 +127,9 @@ driver.navigate().refresh();
     public void clickHomeCalendarNavbar(){
         loginPage.open()
                 .login(username, password);
-
-        navbarPage.clickOnNavbar("HOME");
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //navbarPage.clickOnNavbar("HOME");
 
         navbarPage.selectMenuOption("HOME","CALENDAR");
 
@@ -125,8 +141,9 @@ driver.navigate().refresh();
     public void clickHomeProfileNavbar() {
         loginPage.open()
                 .login(username, password);
-
-        navbarPage.clickOnNavbar("HOME");
+        driver.findElement(By.id("profile-link")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //navbarPage.clickOnNavbar("HOME");
         navbarPage.selectMenuOption("HOME","PROFILE");
 
         assertEquals(logNavbarPage.checkoutTitleHomeProfile(), "Profile", "Profile page is not open");
