@@ -28,6 +28,7 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("DIETITIAN","DETAILS");
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[span[text()='DIETITIAN']]")));
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='DETAILS']")));
@@ -40,7 +41,7 @@ driver.navigate().refresh();
     public void clickArticlesNutritionNavbar(){
         loginPage.open();
         loginPage.login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","NUTRITION");
 
 
@@ -64,7 +65,7 @@ driver.navigate().refresh();
     public void clickArticlesFitnessNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","FITNESS");
         navbarPage.isPageOpen();
 
@@ -77,7 +78,7 @@ driver.navigate().refresh();
     public void clickArticlesHomeNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES","HOME");
         navbarPage.isPageOpen();
 
@@ -100,7 +101,7 @@ driver.navigate().refresh();
     public void clickForumsHomeNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("FORUMS","HOME");
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
@@ -111,6 +112,8 @@ driver.navigate().refresh();
     public void clickHomeCalendarNavbar(){
         loginPage.open()
                 .login(username, password);
+
+        navbarPage.clickOnNavbar("HOME");
 
         navbarPage.selectMenuOption("HOME","CALENDAR");
 
@@ -123,6 +126,7 @@ driver.navigate().refresh();
         loginPage.open()
                 .login(username, password);
 
+        navbarPage.clickOnNavbar("HOME");
         navbarPage.selectMenuOption("HOME","PROFILE");
 
         assertEquals(logNavbarPage.checkoutTitleHomeProfile(), "Profile", "Profile page is not open");
@@ -133,7 +137,7 @@ driver.navigate().refresh();
     public void clickSettingsHomeNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("HOME");
         navbarPage.selectMenuOption("HOME","SETTINGS");
 
 
@@ -145,7 +149,7 @@ driver.navigate().refresh();
     public void clickReportsCalorieNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","CALORIE");
 
 
@@ -157,7 +161,7 @@ driver.navigate().refresh();
     public void clickReportsNutritionNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","NUTRITION");
 
 
@@ -169,7 +173,7 @@ driver.navigate().refresh();
     public void clickReportsWeightNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","WEIGHT");
 
 
@@ -181,7 +185,7 @@ driver.navigate().refresh();
     public void clickReportsMoodNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","MOOD");
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Mood Report", "Mood report is not open");
@@ -192,7 +196,7 @@ driver.navigate().refresh();
     public void clickReportsCustomNavbar() throws InterruptedException {
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","CUSTOM");
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Custom Reports", "Custom report is not open");
@@ -216,6 +220,7 @@ driver.navigate().refresh();
                 .login(username, password);
 
         AllureUtils.takeScreenshot(driver);
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG","ACTIVITY");
 
 
@@ -227,7 +232,7 @@ driver.navigate().refresh();
     public void clickLogWeightNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG","WEIGHT");
 
         assertEquals(navbarPage.checkoutTitles(), "Weight Log", "Weight page is not open");
@@ -238,7 +243,7 @@ driver.navigate().refresh();
     public void clickLogMoodNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG","MOOD");
 
         assertEquals(navbarPage.checkoutTitles(), "Mood Log", "Mood page is not open");
@@ -249,7 +254,7 @@ driver.navigate().refresh();
     public void clickLogCustomNavbar(){
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG","CUSTOM");
 
         assertEquals(navbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
@@ -260,7 +265,7 @@ driver.navigate().refresh();
     public void clickLogBodyNavbar() {
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("LOG","BODY");
 
         assertEquals(navbarPage.checkoutTitles(), "Body Log", "Body page is not open");
@@ -271,7 +276,7 @@ driver.navigate().refresh();
     public void clickReportsBodyNavbar() {
         loginPage.open()
                 .login(username, password);
-
+        navbarPage.clickOnNavbar("REPORTS");
         navbarPage.selectMenuOption("REPORTS","BODY");
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Body Measurement Report", "Body report is not open");

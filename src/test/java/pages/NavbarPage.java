@@ -76,6 +76,7 @@ public class NavbarPage extends BasePage {
     @Step("Click on item navbar")
     public void clickOnNavbar(String menuOption) {
         driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, menuOption))).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("click on articles navbar");
     }
 
