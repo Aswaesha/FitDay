@@ -67,6 +67,13 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("click on plus button")
+    public void clickPlusListButton() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.findElement(PLUS_BUTTON_LIST).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        log.info("click on plus button");
+    }
+    @Step("click on plus button")
     public void clickPlusButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(PLUS_BUTTON).click();

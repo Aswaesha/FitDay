@@ -23,7 +23,8 @@ public abstract class BasePage {
     public static final By TITLE_CATEGORIES = By.xpath("//h2[@id='page-title']");
     public static final By REPORTS_ITEM_TITLE = By.xpath("//div[@id='main-full']//h1");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
-    public static final By PLUS_BUTTON = By.xpath("//div[@id='food-search-all']//div[@class='fd-search-results']//table//tbody//tr[1]//td[@class='actions']//a");
+    public static final By PLUS_BUTTON = By.xpath("//td[@class='actions']//a");
+    public static final By PLUS_BUTTON_LIST = By.xpath("//div[@id='food-search-all']//div[@class='fd-search-results']//table//tbody//tr[1]//td[@class='actions']//a");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

@@ -51,6 +51,7 @@ public class LoginPage extends BasePage {
         log.info("Enter password");
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         return new MainPage(driver);
     }
 

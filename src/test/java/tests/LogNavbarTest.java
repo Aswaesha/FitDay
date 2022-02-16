@@ -18,7 +18,7 @@ public class LogNavbarTest extends BaseTest {
         logNavbarPage.clickAddFoodButton();
 
         logNavbarPage.inputFoodText();
-        logNavbarPage.clickPlusButton();
+        logNavbarPage.clickPlusListButton();
 
         assertEquals(logNavbarPage.checkFoodTable(), "Apple, raw", "Food not found");
         driver.manage().deleteAllCookies();
@@ -32,7 +32,7 @@ public class LogNavbarTest extends BaseTest {
 
         logNavbarPage.clickAddActivityButton();
         logNavbarPage.inputActivityText();
-        logNavbarPage.clickPlusButton();
+        logNavbarPage.clickPlusListButton();
         logNavbarPage.clickAddToActivityLogButton();
         assertEquals(logNavbarPage.checkActivityTable(), "fast ballroom dancing", "Activity not found");
         driver.manage().deleteAllCookies();
