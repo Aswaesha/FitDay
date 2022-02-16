@@ -130,8 +130,9 @@ public class NavbarTest extends BaseTest {
 
         navbarPage.clickOnNavbar("HOME");
 
-        navbarPage.selectMenuOption("HOME", "CALENDAR");
-
+        //navbarPage.selectMenuOption("HOME", "CALENDAR");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CALENDAR']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertTrue(navbarPage.checkoutCalendarTable(), "Calendar page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -142,8 +143,9 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.clickOnNavbar("HOME");
-        navbarPage.selectMenuOption("HOME", "PROFILE");
-
+        //navbarPage.selectMenuOption("HOME", "PROFILE");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='PROFILE']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(logNavbarPage.checkoutTitleHomeProfile(), "Profile", "Profile page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -153,9 +155,10 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("HOME");
-        navbarPage.selectMenuOption("HOME", "SETTINGS");
+       // navbarPage.selectMenuOption("HOME", "SETTINGS");
 
-
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='SETTINGS']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Settings", "Settings page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -165,7 +168,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "CALORIE");
+     //   navbarPage.selectMenuOption("REPORTS", "CALORIE");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CALORIE']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Calories", "Calorie report is not open");
@@ -177,9 +182,10 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "NUTRITION");
+       // navbarPage.selectMenuOption("REPORTS", "NUTRITION");
 
-
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='NUTRITION']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutReportsTitles(), "Nutrition", "Nutrition report is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -189,8 +195,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "WEIGHT");
-
+        //navbarPage.selectMenuOption("REPORTS", "WEIGHT");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='WEIGHT']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Weight Report", "Weight report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -201,19 +208,21 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "MOOD");
-
+       // navbarPage.selectMenuOption("REPORTS", "MOOD");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='MOOD']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutReportsTitles(), "Mood Report", "Mood report is not open");
         AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Open custom report across navbar")
-    public void clickReportsCustomNavbar() throws InterruptedException {
+    public void clickReportsCustomNavbar()  {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "CUSTOM");
-
+        //navbarPage.selectMenuOption("REPORTS", "CUSTOM");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CUSTOM']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutReportsTitles(), "Custom Reports", "Custom report is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -226,7 +235,8 @@ public class NavbarTest extends BaseTest {
         navbarPage.clickOnNavbar("LOG");
         driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='SETTINGS']")));
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Food Log", "Food page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -238,9 +248,10 @@ public class NavbarTest extends BaseTest {
 
         AllureUtils.takeScreenshot(driver);
         navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("LOG", "ACTIVITY");
+        //navbarPage.selectMenuOption("LOG", "ACTIVITY");
 
-
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='ACTIVITY']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -250,8 +261,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("LOG", "WEIGHT");
-
+        //navbarPage.selectMenuOption("LOG", "WEIGHT");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='WEIGHT']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Weight Log", "Weight page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -261,8 +273,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("LOG", "MOOD");
-
+       // navbarPage.selectMenuOption("LOG", "MOOD");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='MOOD']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Mood Log", "Mood page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -272,8 +285,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("LOG", "CUSTOM");
-
+        //navbarPage.selectMenuOption("LOG", "CUSTOM");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CUSTOM']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -283,8 +297,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("LOG", "BODY");
-
+        //navbarPage.selectMenuOption("LOG", "BODY");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='BODY']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutTitles(), "Body Log", "Body page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -294,8 +309,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-        navbarPage.selectMenuOption("REPORTS", "BODY");
-
+        //navbarPage.selectMenuOption("REPORTS", "BODY");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='BODY']")));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         assertEquals(navbarPage.checkoutReportsTitles(), "Body Measurement Report", "Body report is not open");
         AllureUtils.takeScreenshot(driver);
     }
