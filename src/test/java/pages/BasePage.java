@@ -19,11 +19,11 @@ public abstract class BasePage {
     public static final By FORGOT_LINK = By.xpath("//p[@class='links']//a[1]");
     public static final By CREATE_LINK = By.xpath("//p[@class='links']//a[2]");
     public static final By SAVE_BUTTON = By.xpath("//a[@class='save button']");
-    public static final By PLUS_BUTTON = By.xpath("//td[@class='actions']//a");
     public static final By PAGES_ITEM_TITLE = By.xpath("//div[@id='main']//h1");
     public static final By TITLE_CATEGORIES = By.xpath("//h2[@id='page-title']");
     public static final By REPORTS_ITEM_TITLE = By.xpath("//div[@id='main-full']//h1");
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
+    public static final By PLUS_BUTTON = By.xpath("//div[@id='food-search-all']//div[@class='fd-search-results']//table//tbody//tr[1]//td[@class='actions']//a");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

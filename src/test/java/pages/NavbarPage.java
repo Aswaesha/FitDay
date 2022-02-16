@@ -3,7 +3,6 @@ package pages;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +18,7 @@ public class NavbarPage extends BasePage {
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
+        driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("hover start");
         Actions action = new Actions(driver);

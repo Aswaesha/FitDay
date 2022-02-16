@@ -68,6 +68,7 @@ public class LogNavbarPage extends BasePage {
 
     @Step("click on plus button")
     public void clickPlusButton() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(PLUS_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on plus button");
@@ -88,7 +89,7 @@ public class LogNavbarPage extends BasePage {
     @Step("click on save button")
     public void clickSaveButton() {
         driver.findElement(SAVE_BUTTON).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("click on save button");
     }
 
