@@ -62,6 +62,7 @@ public class LogNavbarPage extends BasePage {
     @Step("Click on dropdown params")
     public void clickDropdownValue(String dropdownOption) {
         driver.findElement(By.xpath(String.format(PARAMS_DROPDOWN, dropdownOption))).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on dropdown params");
     }
 
@@ -107,6 +108,7 @@ public class LogNavbarPage extends BasePage {
     public void clickAddToActivityLogButton(){
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(ADD_TO_ACTIVITY_LOG_BUTTON).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on to activity log add button");
     }
 

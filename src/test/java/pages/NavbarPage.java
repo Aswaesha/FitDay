@@ -19,6 +19,7 @@ public class NavbarPage extends BasePage {
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("hover start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));

@@ -56,7 +56,7 @@ public class LogNavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Change weight data")
+    @Test(description = "Check popup")
     public void checkPopUp(){
         loginPage.open()
                 .login(username, password);
@@ -78,7 +78,7 @@ public class LogNavbarTest extends BaseTest {
 
         logNavbarPage.open("/app/log/diary");
 
-        //logNavbarPage.clickEditGreyButton();
+        logNavbarPage.clickEditGreyButton();
         logNavbarPage.inputMoodText();
         logNavbarPage.clickSaveButton();
 
