@@ -15,8 +15,8 @@ public class NavbarTest extends BaseTest {
     public void clickDietitianNavbar() {
         loginPage.open()
                 .login(username, password);
-        driver.findElement(By.id("profile-link")).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.findElement(By.id("profile-link")).click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         navbarPage.clickOnNavbar("DIETITIAN");
 
@@ -44,8 +44,8 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesNutritionNavbar() {
         loginPage.open();
         loginPage.login(username, password);
-        driver.findElement(By.id("profile-link")).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.findElement(By.id("profile-link")).click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         //navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES");
 
@@ -58,10 +58,9 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesNavbar() {
         loginPage.open()
                 .login(username, password);
-        driver.findElement(By.id("profile-link")).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.findElement(By.id("profile-link")).click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.clickOnNavbar("ARTICLES");
-        navbarPage.isPageOpen();
 
         assertTrue(navbarPage.buttonFitness(), "Article page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -71,10 +70,10 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesFitnessNavbar() {
         loginPage.open()
                 .login(username, password);
-
-        driver.findElement(By.id("profile-link")).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        navbarPage.clickOnNavbar("LOG");
+//
+//        driver.findElement(By.id("profile-link")).click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //navbarPage.clickOnNavbar("LOG");
         navbarPage.selectMenuOption("ARTICLES");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='FITNESS']")));
 
