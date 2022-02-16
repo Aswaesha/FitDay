@@ -1,7 +1,11 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -22,9 +26,11 @@ public class NavbarTest extends BaseTest {
     public void clickDietitianDetailsNavbar(){
         loginPage.open()
                 .login(username, password);
-
+driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         navbarPage.selectMenuOption("DIETITIAN","DETAILS");
-
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[span[text()='DIETITIAN']]")));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='DETAILS']")));
 
         assertEquals(navbarPage.checkoutTitleDetailsPag(), "We are not accepting purchases at this time.", "Details page is not open");
         AllureUtils.takeScreenshot(driver);

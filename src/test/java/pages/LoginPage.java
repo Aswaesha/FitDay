@@ -40,6 +40,7 @@ public class LoginPage extends BasePage {
             log.info("###### attempt number: " + count);
             login(userName, password);
         }
+        //driver.navigate().refresh();
         return new MainPage(driver);
     }
 
@@ -52,7 +53,6 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.navigate().refresh();
         return new MainPage(driver);
     }
 

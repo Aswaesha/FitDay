@@ -3,6 +3,7 @@ package pages;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,23 +24,25 @@ public class NavbarPage extends BasePage {
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
+        WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
+        action.moveToElement(we1).build().perform();
+//
 
-
-
+        //((JavaScriptExecutor)webDriver).executeScript("arguments[0].scrollIntoView(true);", webElement);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
-            count2++;
-            log.info("###### attempt2 number: " + count2);
-            driver.navigate().refresh();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
-            action.moveToElement(we1).build().perform();
-        }
-        log.info("hover finish and start click");
-        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        log.info("finish click");
+       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",MAIN_ITEM_NAVBAR,firstMenuOption);
+//        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
+//            count2++;
+//            log.info("###### attempt2 number: " + count2);
+//            driver.navigate().refresh();
+//            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
+//            action.moveToElement(we1).build().perform();
+//        }
+//        log.info("hover finish and start click");
+       driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        log.info("finish click");
     }
 
     //private int count;
