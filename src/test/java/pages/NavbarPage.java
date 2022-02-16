@@ -23,25 +23,25 @@ public class NavbarPage extends BasePage {
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
-        log.info("hover finish and start click");
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
+            count2++;
+            log.info("###### attempt2 number: " + count2);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
+            action.moveToElement(we1).build().perform();
+        }
+        log.info("hover finish and start click");
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-//        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
-//            count2++;
-//            log.info("###### attempt2 number: " + count2);
-//            driver.navigate().refresh();
-//            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
-//            action.moveToElement(we1).build().perform();
-//            driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-//        }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("finish click");
     }
 
     //private int count;
-   // private int count2;
-
+    private int count2;
     //    @Step("Click on items navbar")
 //    public void selectSecondMenuOption(String secondMenuOption){
 //        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR);

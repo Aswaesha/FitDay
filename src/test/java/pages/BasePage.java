@@ -25,6 +25,7 @@ public abstract class BasePage {
     public static final By FITNESS_BUTTON = By.xpath("//div[@class='main-cat']//a[text()='Fitness']");
     public static final By PLUS_BUTTON = By.xpath("//td[@class='actions']//a");
     public static final By PLUS_BUTTON_LIST = By.xpath("//div[@id='food-search-all']//div[@class='fd-search-results']//table//tbody//tr[1]//td[@class='actions']//a");
+    public static final By PLUS_BUTTON_ACTIVITY = By.xpath("//div[@id='activity-search-all']//form[@id='result-activities']//table//tbody//tr[1]//td[@class='actions']//a");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

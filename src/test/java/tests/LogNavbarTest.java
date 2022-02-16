@@ -32,7 +32,7 @@ public class LogNavbarTest extends BaseTest {
 
         logNavbarPage.clickAddActivityButton();
         logNavbarPage.inputActivityText();
-        logNavbarPage.clickPlusListButton();
+        logNavbarPage.clickPlusActivityButton();
         logNavbarPage.clickAddToActivityLogButton();
         assertEquals(logNavbarPage.checkActivityTable(), "fast ballroom dancing", "Activity not found");
         driver.manage().deleteAllCookies();
