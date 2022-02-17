@@ -19,14 +19,13 @@ public class NavbarPage extends BasePage {
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("hover start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//div[@class='fd-submenu']")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.findElement(By.xpath("//div[@class='fd-submenu']")).click();
         //((JavaScriptExecutor)webDriver).executeScript("arguments[0].scrollIntoView(true);", webElement);
 
         driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
@@ -69,7 +68,6 @@ public class NavbarPage extends BasePage {
     @Step("Click on item navbar")
     public void clickOnNavbar(String menuOption) {
         driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, menuOption))).click();
-        driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("click on articles navbar");
     }
