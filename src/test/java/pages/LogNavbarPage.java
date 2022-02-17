@@ -159,7 +159,7 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(ADD_TO_ACTIVITY_LOG_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        log.info("click on to activity log add button");
+        log.info("click on activity log add button");
     }
 
     @Step("Check changed weight")
