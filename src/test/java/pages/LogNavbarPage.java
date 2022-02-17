@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-
 @Log4j2
 public class LogNavbarPage extends BasePage {
     public static final By DROPDOWN = By.xpath("//select[@class='pkey']");
@@ -16,11 +15,9 @@ public class LogNavbarPage extends BasePage {
     public static final By MOOD_INPUT = By.xpath("//textarea[@name='text']");
     public static final By WEIGHT_INPUT = By.xpath("//input[@name='weight']");
     public static final By EDIT_BUTTON_GREY = By.xpath("//a[@class='edit button grey']");
-    public static final By TIME_ACTIVITY_INPUT = By.xpath("//input[@class='hours valid']");
-
-    public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='custom']";
     public static final By WEIGHT_VALUE = By.xpath("//td[text()='Weight']//ancestor::tr//td[3]");
     public static final By POPUP = By.xpath("//div[@class='content fd_premium_lightbox green']");
+    public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='custom']";
     public static final By PROFILE_TITLE = By.xpath("//div[@id='profile-top']//div[@class='title']");
     public static final By ADD_TO_ACTIVITY_LOG_BUTTON = By.xpath("//div[@class='right']//a//span[2]");
     public static final By FOOD_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()]//td/a");
@@ -50,7 +47,9 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(FOOD_ITEM).getText();
     }
+
     private int count;
+
     @Step("Check title after click on home in profile navbar")
     public String checkoutTitleHomeProfile() {
         log.info("get title for profile page");
@@ -73,6 +72,8 @@ public class LogNavbarPage extends BasePage {
             driver.navigate().refresh();
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         return driver.findElement(MOOD).getText();
     }
 
