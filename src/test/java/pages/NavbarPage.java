@@ -18,7 +18,7 @@ public class NavbarPage extends BasePage {
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption) {
+    public void selectMenuOption(String firstMenuOption,String secondMenuOption) {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("hover start");
         Actions action = new Actions(driver);
@@ -39,8 +39,8 @@ public class NavbarPage extends BasePage {
 ////            action.moveToElement(we1).build().perform();
 ////        }
 ////        log.info("hover finish and start click");
-//       driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-////        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+       driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("finish click");
     }
 

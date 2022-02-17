@@ -15,8 +15,6 @@ public class NavbarTest extends BaseTest {
     public void clickDietitianNavbar() {
         loginPage.open()
                 .login(username, password);
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         navbarPage.clickOnNavbar("DIETITIAN");
 
@@ -29,12 +27,9 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-//driver.navigate().refresh();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-       navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("DIETITIAN");
-        // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[span[text()='DIETITIAN']]")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='DETAILS']")));
+
+        navbarPage.clickOnNavbar("LOG");
+        navbarPage.selectMenuOption("DIETITIAN", "DETAILS");
 
         assertEquals(navbarPage.checkoutTitleDetailsPag(), "We are not accepting purchases at this time.", "Details page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -44,12 +39,9 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesNutritionNavbar() {
         loginPage.open();
         loginPage.login(username, password);
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        //navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("ARTICLES");
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='NUTRITION']")));
+        navbarPage.selectMenuOption("ARTICLES", "NUTRITION");
+
         assertTrue(navbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -58,8 +50,7 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesNavbar() {
         loginPage.open()
                 .login(username, password);
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         navbarPage.clickOnNavbar("ARTICLES");
 
         assertTrue(navbarPage.buttonFitness(), "Article page is not open");
@@ -70,61 +61,47 @@ public class NavbarTest extends BaseTest {
     public void clickArticlesFitnessNavbar() {
         loginPage.open()
                 .login(username, password);
-//
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        //navbarPage.clickOnNavbar("LOG");
-        navbarPage.selectMenuOption("ARTICLES");
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='FITNESS']")));
+
+        navbarPage.selectMenuOption("ARTICLES", "FITNESS");
 
         assertTrue(navbarPage.buttonFitness(), "Fitness page is not open");
         AllureUtils.takeScreenshot(driver);
         driver.manage().deleteAllCookies();
     }
 
-//    @Test(description = "Open home page across navbar")
-//    public void clickArticlesHomeNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        // navbarPage.clickOnNavbar("LOG");
-//        navbarPage.selectMenuOption("ARTICLES", "HOME");
-//        navbarPage.isPageOpen();
-//
-//        assertTrue(navbarPage.buttonFitness(), "Home page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
+    @Test(description = "Open home page across navbar")
+    public void clickArticlesHomeNavbar() {
+        loginPage.open()
+                .login(username, password);
+
+        navbarPage.selectMenuOption("ARTICLES", "HOME");
+        navbarPage.isPageOpen();
+
+        assertTrue(navbarPage.buttonFitness(), "Home page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
 
     @Test(description = "Open forums across Navbar")
     public void clickForumNavbar() {
         loginPage.open()
                 .login(username, password);
-               driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         navbarPage.clickOnNavbar("FORUMS");
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
         AllureUtils.takeScreenshot(driver);
     }
-//
-//    @Test(description = "Open forum page across navbar forums home")
-//    public void clickForumsHomeNavbar() {
-//        loginPage.open()
-//                .login(username, password);
-//        driver.findElement(By.id("profile-link")).click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        //navbarPage.clickOnNavbar("LOG");
-//        navbarPage.selectMenuOption("FORUMS", "HOME");
-//
-//        assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
-//        AllureUtils.takeScreenshot(driver);
-//    }
 
+    @Test(description = "Open forum page across navbar forums home")
+    public void clickForumsHomeNavbar() {
+        loginPage.open()
+                .login(username, password);
 
+        navbarPage.selectMenuOption("FORUMS", "HOME");
 
-
-
-
+        assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
+        AllureUtils.takeScreenshot(driver);
+    }
 
 
     @Test(description = "Open calendar page across navbar")
@@ -161,7 +138,7 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("HOME");
-       // navbarPage.selectMenuOption("HOME", "SETTINGS");
+        // navbarPage.selectMenuOption("HOME", "SETTINGS");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='SETTINGS']")));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -174,7 +151,7 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-     //   navbarPage.selectMenuOption("REPORTS", "CALORIE");
+        //   navbarPage.selectMenuOption("REPORTS", "CALORIE");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='CALORIE']")));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -189,7 +166,7 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-       // navbarPage.selectMenuOption("REPORTS", "NUTRITION");
+        // navbarPage.selectMenuOption("REPORTS", "NUTRITION");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='NUTRITION']")));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -216,7 +193,7 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
-       // navbarPage.selectMenuOption("REPORTS", "MOOD");
+        // navbarPage.selectMenuOption("REPORTS", "MOOD");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='MOOD']")));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -225,7 +202,7 @@ public class NavbarTest extends BaseTest {
     }
 
     @Test(description = "Open custom report across navbar")
-    public void clickReportsCustomNavbar()  {
+    public void clickReportsCustomNavbar() {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("REPORTS");
@@ -284,7 +261,7 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
         navbarPage.clickOnNavbar("LOG");
-       // navbarPage.selectMenuOption("LOG", "MOOD");
+        // navbarPage.selectMenuOption("LOG", "MOOD");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//ul[not(contains(@style, 'none'))]/li//a[text()='MOOD']")));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
