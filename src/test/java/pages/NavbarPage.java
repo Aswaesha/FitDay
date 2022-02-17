@@ -3,7 +3,6 @@ package pages;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,8 +13,34 @@ import java.util.concurrent.TimeUnit;
 public class NavbarPage extends BasePage {
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
     public static final By CALENDAR_TABLE = By.xpath("//div[@id='j-calendar']");
+    public static final By CALORIES_TABLE = By.id("ib-box plain");
     public static final By TITLE_DETAILS = By.xpath("//div[@class='Holder']//h1");
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
+
+    public void logCheckPage(){
+        if (!isExist(INPUT_TEXT) && count < 10) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
+    }
+    public void reportCheckPage(){
+        if (!isExist(CALORIES_TABLE) && count < 10) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
+    }
+    public void homeCheckPage(){
+        if (!isExist(ADD_FOOD_BUTTON) && count < 10) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
+    }
 
     @Step("Click on items navbar")
     public void selectMenuOption(String firstMenuOption) {
