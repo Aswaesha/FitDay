@@ -40,12 +40,17 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(FOOD_ITEM).getText();
     }
-
+    private int count;
     @Step("Check title after click on home in profile navbar")
     public String checkoutTitleHomeProfile() {
         log.info("get title for profile page");
-        driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(PROFILE_TITLE) && count < 5){
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
         return driver.findElement(PROFILE_TITLE).getText();
     }
 

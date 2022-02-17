@@ -14,6 +14,7 @@ public abstract class BasePage {
     public static final By HEADER_MENU = By.id("header-menu");
     public static final String BASE_URL = "https://www.fitday.com";
     public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
+    public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
     public static final By TITLE_DISCUSSION_BOARDS = By.xpath("//h1//strong");
     public static final By EDIT_BUTTON = By.xpath("//a[@class='edit button']");
     public static final By FORGOT_LINK = By.xpath("//p[@class='links']//a[1]");

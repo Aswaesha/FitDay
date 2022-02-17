@@ -14,7 +14,6 @@ import static pages.NavbarPage.MAIN_ITEM_NAVBAR;
 public class LoginPage extends BasePage {
     public static final By USER_INPUT = By.id("Username");
     public static final By USERNAME_INPUT = By.id("username");
-    public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
     public static final By PASSWORD_INPUT = By.xpath("//input[@type='password']");
     public static final By SING_UP_BUTTON = By.xpath("//input[@value='Sign Up']");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
@@ -40,7 +39,6 @@ public class LoginPage extends BasePage {
             log.info("###### attempt number: " + count);
             login(userName, password);
         }
-        //driver.navigate().refresh();
         return new MainPage(driver);
     }
 
