@@ -114,6 +114,7 @@ public class NavbarTest extends BaseTest {
         navbarPage.clickOnNavbar("HOME");
         navbarPage.homeCheckPage();
         navbarPage.selectSecondMenuOption("CALENDAR");
+        navbarPage.waitRefresh();
 
         assertTrue(navbarPage.checkoutCalendarTable(), "Calendar page is not open");
         AllureUtils.takeScreenshot(driver);

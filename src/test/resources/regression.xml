@@ -3,7 +3,7 @@
 <suite thread-count="4" name="Test suite" parallel="tests">
 
     <test name="test 1">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.MainTest"/>
@@ -11,7 +11,7 @@
     </test> <!-- Test -->
 
     <test name="test 2">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.PremiumPackageTest"/>
             <class name="tests.LogNavbarTest"/>
