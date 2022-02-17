@@ -54,6 +54,7 @@ public class MainTest extends BaseTest {
 
         assertEquals(mainPage.getTextTitleOfPage(), "Fitness", "Title is not found");
     }
+
     @Test(description = "Search in a search box")
     public void searchTest() {
         mainPage.open()

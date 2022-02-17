@@ -64,7 +64,7 @@ public class LogNavbarTest extends BaseTest {
         logNavbarPage.open("/app/log/stats");
 
         logNavbarPage.clickDropdown();
-        logNavbarPage.clickDropdownValue("custom");
+        logNavbarPage.clickDropdownValue();
         logNavbarPage.clickPlusButton();
 
         assertTrue(logNavbarPage.checkoutPopup(), "Popup is not displayed");

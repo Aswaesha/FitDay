@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
+import java.util.concurrent.TimeUnit;
+
 @Log4j2
 public class MainPage extends BasePage {
     public static final By LEARN_MORE_BUTTON = By.xpath("//ul[@class='dropdown']//li");
@@ -26,6 +28,13 @@ public class MainPage extends BasePage {
 
     @Step("Check popup")
     public boolean checkoutLink() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(SEARCH_RESULT_LINK) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
         return driver.findElement(SEARCH_RESULT_LINK).isDisplayed();
     }
 
@@ -49,36 +58,71 @@ public class MainPage extends BasePage {
 
     @Step("click on nutrition at learn more")
     public void listClickOnNutrition() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(NUTRITION_LINK) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(LEARN_MORE_BUTTON).click();
+        }
         driver.findElement(NUTRITION_LINK).click();
         log.info("click on nutrition");
     }
 
     @Step("click on fitness  at learn more")
     public void listClickOnFitness() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(FITNESS_LINK) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(LEARN_MORE_BUTTON).click();
+        }
         driver.findElement(FITNESS_LINK).click();
         log.info("click on fitness");
     }
 
     @Step("click on forums  at learn more")
     public void listClickOnForums() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(FORUMS_LINK) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(LEARN_MORE_BUTTON).click();
+        }
         driver.findElement(FORUMS_LINK).click();
         log.info("click on forums");
     }
 
+    private int count;
+
     @Step("Get text title")
     public String getTextTitleOfPage() {
         log.info("get error message for titles");
-        new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
-            }
-        };
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(TITLE_CATEGORIES) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
         return driver.findElement(TITLE_CATEGORIES).getText();
     }
 
     @Step("Title forum message")
     public String getTextTitleOfForums() {
         log.info("get error message for forum title");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(TITLE_DISCUSSION_BOARDS) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
         return driver.findElement(TITLE_DISCUSSION_BOARDS).getText();
     }
 

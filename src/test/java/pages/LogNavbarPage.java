@@ -18,7 +18,7 @@ public class LogNavbarPage extends BasePage {
     public static final By EDIT_BUTTON_GREY = By.xpath("//a[@class='edit button grey']");
     public static final By TIME_ACTIVITY_INPUT = By.xpath("//input[@class='hours valid']");
 
-    public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='%s']";
+    public static final String PARAMS_DROPDOWN = "//select[@class='pkey']//option[@value='custom']";
     public static final By WEIGHT_VALUE = By.xpath("//td[text()='Weight']//ancestor::tr//td[3]");
     public static final By POPUP = By.xpath("//div[@class='content fd_premium_lightbox green']");
     public static final By PROFILE_TITLE = By.xpath("//div[@id='profile-top']//div[@class='title']");
@@ -34,8 +34,12 @@ public class LogNavbarPage extends BasePage {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver.findElement(DROPDOWN).click();
+            driver.findElement(By.xpath(PARAMS_DROPDOWN)).click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(PLUS_BUTTON).click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
         return driver.findElement(POPUP).isDisplayed();
     }
@@ -79,8 +83,8 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Click on dropdown params")
-    public void clickDropdownValue(String dropdownOption) {
-        driver.findElement(By.xpath(String.format(PARAMS_DROPDOWN, dropdownOption))).click();
+    public void clickDropdownValue() {
+        driver.findElement(By.xpath(PARAMS_DROPDOWN)).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on dropdown params");
     }
