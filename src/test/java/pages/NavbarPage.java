@@ -74,7 +74,7 @@ public class NavbarPage extends BasePage {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
         return driver.findElement(PAGES_ITEM_TITLE).getText();
     }

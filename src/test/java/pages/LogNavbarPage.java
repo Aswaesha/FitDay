@@ -66,14 +66,12 @@ public class LogNavbarPage extends BasePage {
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
-        if (!isExist(MOOD) && count < 5){
+        if (!isExist(MOOD) && count < 15){
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         }
-        driver.navigate().refresh();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         return driver.findElement(MOOD).getText();
     }
 
@@ -203,14 +201,6 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");
     }
-
-//    @Step("Input time")
-//    public void inputTime() {
-//        driver.findElement(TIME_ACTIVITY_INPUT).click();
-//        driver.findElement(TIME_ACTIVITY_INPUT).clear();
-//        driver.findElement(TIME_ACTIVITY_INPUT).sendKeys("1");
-//        log.info("text time");
-//    }
 
     @Step("Input text")
     public void inputWeightText() {
