@@ -20,18 +20,6 @@ public class LoginPage extends BasePage {
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
     private int count;
 
-    @Step("Check login page error")
-    public void checkLoginPage(String userName, String password) {
-        if (isExist(LOGIN_BUTTON) && count < 5) {
-            count++;
-            log.info("###### attempt number: " + count);
-            driver.navigate().refresh();
-            driver.findElement(USERNAME_INPUT).sendKeys(userName);
-            driver.findElement(PASSWORD_INPUT).sendKeys(password);
-            driver.findElement(LOGIN_BUTTON).click();
-        }
-    }
-
     @Step("Open login page")
     public LoginPage open() {
         driver.get(BASE_URL + "/fitness/Login.html");

@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
 
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -15,7 +14,6 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.clickOnNavbar("DIETITIAN");
-        loginPage.checkLoginPage(username,password);
 
         assertTrue(navbarPage.buttonFitness(), "Article page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -26,11 +24,8 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-
         navbarPage.selectMenuOption("DIETITIAN");
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("DETAILS");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitleDetailsPag(), "We are not accepting purchases at this time.", "Details page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -42,9 +37,7 @@ public class NavbarTest extends BaseTest {
         loginPage.login(username, password);
 
         navbarPage.selectMenuOption("ARTICLES");
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("NUTRITION");
-        loginPage.checkLoginPage(username,password);
 
         assertTrue(navbarPage.checkoutTitle(), "Nutrition page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -56,7 +49,6 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.clickOnNavbar("ARTICLES");
-        loginPage.checkLoginPage(username,password);
 
         assertTrue(navbarPage.buttonFitness(), "Article page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -68,9 +60,7 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.selectMenuOption("ARTICLES");
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("FITNESS");
-        loginPage.checkLoginPage(username,password);
 
         assertTrue(navbarPage.buttonFitness(), "Fitness page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -83,9 +73,7 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.selectMenuOption("ARTICLES");
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("HOME");
-        loginPage.checkLoginPage(username,password);
         navbarPage.isPageOpen();
 
         assertTrue(navbarPage.buttonFitness(), "Home page is not open");
@@ -98,7 +86,6 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.clickOnNavbar("FORUMS");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -110,9 +97,7 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.selectMenuOption("FORUMS");
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("HOME");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitleDiscussionBoards(), "FitDay Discussion Boards", "Forums page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -125,10 +110,8 @@ public class NavbarTest extends BaseTest {
                 .login(username, password);
 
         navbarPage.clickOnNavbar("HOME");
-        loginPage.checkLoginPage(username,password);
         navbarPage.homeCheckPage();
         navbarPage.selectSecondMenuOption("CALENDAR");
-        loginPage.checkLoginPage(username,password);
 
         assertTrue(navbarPage.checkoutCalendarTable(), "Calendar page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -141,9 +124,8 @@ public class NavbarTest extends BaseTest {
 
         navbarPage.clickOnNavbar("HOME");
         navbarPage.homeCheckPage();
-        loginPage.checkLoginPage(username,password);
+
         navbarPage.selectSecondMenuOption("PROFILE");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(logNavbarPage.checkoutTitleHomeProfile(), "Profile", "Profile page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -153,11 +135,10 @@ public class NavbarTest extends BaseTest {
     public void clickSettingsHomeNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("HOME");
         navbarPage.homeCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("SETTINGS");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Settings", "Settings page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -167,11 +148,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsCalorieNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
         navbarPage.reportCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("CALORIE");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Calories", "Calorie report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -181,11 +161,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsNutritionNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
         navbarPage.reportCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("NUTRITION");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Nutrition", "Nutrition report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -195,11 +174,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsWeightNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
         navbarPage.reportCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("WEIGHT");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Weight Report", "Weight report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -209,11 +187,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsMoodNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
         navbarPage.reportCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("MOOD");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Mood Report", "Mood report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -223,11 +200,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsCustomNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
         navbarPage.reportCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption( "CUSTOM");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Custom Reports", "Custom report is not open");
         AllureUtils.takeScreenshot(driver);
@@ -240,7 +216,7 @@ public class NavbarTest extends BaseTest {
 
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
+
         assertEquals(navbarPage.checkoutTitles(), "Food Log", "Food page is not open");
         AllureUtils.takeScreenshot(driver);
     }
@@ -250,12 +226,10 @@ public class NavbarTest extends BaseTest {
         loginPage.open()
                 .login(username, password);
 
-        AllureUtils.takeScreenshot(driver);
+
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("ACTIVITY");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Activity Log", "Activity page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -265,11 +239,10 @@ public class NavbarTest extends BaseTest {
     public void clickLogWeightNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption( "WEIGHT");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Weight Log", "Weight page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -279,11 +252,10 @@ public class NavbarTest extends BaseTest {
     public void clickLogMoodNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("MOOD");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Mood Log", "Mood page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -293,11 +265,10 @@ public class NavbarTest extends BaseTest {
     public void clickLogCustomNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("CUSTOM");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Custom Log", "Custom page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -307,11 +278,10 @@ public class NavbarTest extends BaseTest {
     public void clickLogBodyNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("LOG");
         navbarPage.logCheckPage();
-        loginPage.checkLoginPage(username,password);
         navbarPage.selectSecondMenuOption("BODY");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutTitles(), "Body Log", "Body page is not open");
         AllureUtils.takeScreenshot(driver);
@@ -321,10 +291,10 @@ public class NavbarTest extends BaseTest {
     public void clickReportsBodyNavbar() {
         loginPage.open()
                 .login(username, password);
+
         navbarPage.clickOnNavbar("REPORTS");
-        loginPage.checkLoginPage(username,password);
+        navbarPage.reportCheckPage();
         navbarPage.selectSecondMenuOption( "BODY");
-        loginPage.checkLoginPage(username,password);
 
         assertEquals(navbarPage.checkoutReportsTitles(), "Body Measurement Report", "Body report is not open");
         AllureUtils.takeScreenshot(driver);
