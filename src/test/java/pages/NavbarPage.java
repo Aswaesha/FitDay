@@ -161,6 +161,10 @@ public class NavbarPage extends BasePage {
         }
         return driver.findElement(REPORTS_ITEM_TITLE).getText();
     }
+    public void waitRefresh(){
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+    }
 
     public NavbarPage(WebDriver driver) {
         super(driver);

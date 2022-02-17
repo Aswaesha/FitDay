@@ -22,12 +22,13 @@ public class LogNavbarPage extends BasePage {
     public static final By ADD_TO_ACTIVITY_LOG_BUTTON = By.xpath("//div[@class='right']//a//span[2]");
     public static final By FOOD_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()]//td/a");
     public static final By ADD_ACTIVITY_BUTTON = By.xpath("//tr//td[2]//a[@class='add button']//span[2]");
+    public static final By TITLE_WEIGHT_INPUT = By.xpath("//div[@class='ib-box plain'][1]//div[@class='title']");
     public static final By ACTIVITY_ITEM = By.xpath("//table[@class='ib-list']//tbody//tr[last()-1]//td[@class='name']");
 
     @Step("Check popup")
     public boolean checkoutPopup() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(POPUP) && count < 5){
+        if (!isExist(POPUP) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -54,7 +55,7 @@ public class LogNavbarPage extends BasePage {
     public String checkoutTitleHomeProfile() {
         log.info("get title for profile page");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(PROFILE_TITLE) && count < 5){
+        if (!isExist(PROFILE_TITLE) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -66,7 +67,7 @@ public class LogNavbarPage extends BasePage {
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
-        if (!isExist(MOOD) && count < 15){
+        if (!isExist(MOOD) && count < 15) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -95,6 +96,7 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on plus button");
     }
+
     @Step("click on plus button")
     public void clickPlusActivityButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -102,6 +104,7 @@ public class LogNavbarPage extends BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on plus button");
     }
+
     @Step("click on plus button")
     public void clickPlusButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -112,7 +115,7 @@ public class LogNavbarPage extends BasePage {
 
     @Step("click on edit button")
     public void clickEditButton() {
-        if (!isExist(EDIT_BUTTON) && count < 5){
+        if (!isExist(EDIT_BUTTON) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -124,8 +127,12 @@ public class LogNavbarPage extends BasePage {
 
     @Step("click on edit button")
     public void clickEditGreyButton() {
-        driver.findElement(EDIT_BUTTON_GREY).click();
-        log.info("click on edit button");
+        if (!isExist(EDIT_BUTTON_GREY)) {
+            driver.findElement(TITLE_WEIGHT_INPUT).click();
+        } else {
+            driver.findElement(EDIT_BUTTON_GREY).click();
+            log.info("click on edit button");
+        }
     }
 
     @Step("click on save button")
@@ -148,7 +155,7 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Click on to activity log add button")
-    public void clickAddToActivityLogButton(){
+    public void clickAddToActivityLogButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(ADD_TO_ACTIVITY_LOG_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -169,7 +176,7 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Input text")
-    public void inputFoodText(){
+    public void inputFoodText() {
         if (!isExist(INPUT_TEXT) && count < 10) {
             count++;
             log.info("###### attempt number: " + count);
@@ -182,7 +189,7 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Input text")
-    public void inputActivityText(){
+    public void inputActivityText() {
         if (!isExist(INPUT_TEXT) && count < 10) {
             count++;
             log.info("###### attempt number: " + count);
@@ -195,7 +202,7 @@ public class LogNavbarPage extends BasePage {
     }
 
     @Step("Input mood text")
-    public void inputMoodText(){
+    public void inputMoodText() {
         driver.findElement(MOOD_INPUT).clear();
         driver.findElement(MOOD_INPUT).sendKeys("I am happy");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
