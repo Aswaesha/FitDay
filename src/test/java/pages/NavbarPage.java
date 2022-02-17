@@ -11,9 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 @Log4j2
 public class NavbarPage extends BasePage {
+    public static final By CALORIES_TABLE = By.id("ib-box plain");
     public static final String MAIN_ITEM_NAVBAR = "//a[span[text()='%s']]";
     public static final By CALENDAR_TABLE = By.xpath("//div[@id='j-calendar']");
-    public static final By CALORIES_TABLE = By.id("ib-box plain");
     public static final By TITLE_DETAILS = By.xpath("//div[@class='Holder']//h1");
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
