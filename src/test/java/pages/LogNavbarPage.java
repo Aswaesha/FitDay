@@ -168,7 +168,12 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Input text")
     public void inputFoodText(){
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(INPUT_TEXT) && count < 10) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
         driver.findElement(INPUT_TEXT).sendKeys("apple");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");
@@ -176,7 +181,12 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Input text")
     public void inputActivityText(){
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(INPUT_TEXT) && count < 10) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
         driver.findElement(INPUT_TEXT).sendKeys("Dancing");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("text in input");

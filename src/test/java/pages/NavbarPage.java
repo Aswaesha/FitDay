@@ -29,22 +29,23 @@ public class NavbarPage extends BasePage {
     }
 
     private int count;
-    private int count2;
 
-        @Step("Click on items navbar")
-    public void selectSecondMenuOption(String secondMenuOption){
-        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
-                if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count < 10){
+    @Step("Click on items navbar")
+    public void selectSecondMenuOption(String secondMenuOption) {
+        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count < 10) {
             count++;
             log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
+        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         log.info("click on item articles navbar");
     }
 
     @Step("Check title after click on home in settings navbar")
     public String checkoutTitles() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(PAGES_ITEM_TITLE) && count < 5){
+        if (!isExist(PAGES_ITEM_TITLE) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -56,7 +57,7 @@ public class NavbarPage extends BasePage {
     @Step("Check calendar after click on calendar in home navbar")
     public boolean checkoutCalendarTable() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(CALENDAR_TABLE) && count < 5){
+        if (!isExist(CALENDAR_TABLE) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -76,7 +77,7 @@ public class NavbarPage extends BasePage {
     @Step("Check title after click on details in dietitian navbar")
     public String checkoutTitleDetailsPag() {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        if (!isExist(TITLE_DETAILS) && count < 5){
+        if (!isExist(TITLE_DETAILS) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -89,7 +90,7 @@ public class NavbarPage extends BasePage {
     @Step("Check title after click on fitness in article navbar")
     public boolean checkoutTitle() {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        if (!isExist(TITLE_CATEGORIES) && count < 5){
+        if (!isExist(TITLE_CATEGORIES) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -102,7 +103,7 @@ public class NavbarPage extends BasePage {
     public String checkoutTitleDiscussionBoards() {
         log.info("get title for details pade");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(TITLE_DISCUSSION_BOARDS) && count < 5){
+        if (!isExist(TITLE_DISCUSSION_BOARDS) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -114,7 +115,7 @@ public class NavbarPage extends BasePage {
     @Step("Check fitness button")
     public boolean buttonFitness() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(FITNESS_BUTTON) && count < 5){
+        if (!isExist(FITNESS_BUTTON) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
@@ -127,7 +128,7 @@ public class NavbarPage extends BasePage {
     public String checkoutReportsTitles() {
         log.info("get title for reports");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(REPORTS_ITEM_TITLE) && count < 5){
+        if (!isExist(REPORTS_ITEM_TITLE) && count < 5) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
