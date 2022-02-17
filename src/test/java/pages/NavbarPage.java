@@ -34,6 +34,7 @@ public class NavbarPage extends BasePage {
         }
     }
     public void homeCheckPage(){
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         if (!isExist(ADD_FOOD_BUTTON) && count < 10) {
             count++;
             log.info("###### attempt number: " + count);
