@@ -73,7 +73,7 @@ public class LogNavbarTest extends BaseTest {
         AllureUtils.takeScreenshot(driver);
     }
 
-    @Test(description = "Add mood  at diary")
+    @Test(description = "Add mood at diary")
     public void addMoodInDiary() {
         loginPage.open()
                 .login(username, password);

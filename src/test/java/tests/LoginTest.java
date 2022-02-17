@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+import utils.AllureUtils;
 
 
 import static org.testng.Assert.assertEquals;
@@ -13,7 +14,8 @@ public class LoginTest extends BaseTest {
                 .open()
                 .login(username, password);
 
-        assertEquals(navbarPage.checkoutTitles(), "Dashboard","Страница HomePage не открылась");
+        assertEquals(navbarPage.checkoutTitles(), "Dashboard","HomePage not open");
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Test(description = "Check login without user name")
@@ -21,7 +23,7 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .loginError("", password);
 
-        assertEquals(loginPage.getErrorMassageUsername(), "Username is required.", "Massage is not found");
+        assertEquals(loginPage.getErrorMassageUsername(), "Username is required.", "Massage not found");
     }
 
     @Test(description = "Check login without user password")
@@ -29,7 +31,7 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .loginError(username, "");
 
-        assertEquals(loginPage.getErrorMassagePassword(), "Password is required.", "Massage is not found");
+        assertEquals(loginPage.getErrorMassagePassword(), "Password is required.", "Massage not found");
     }
 
     @Test(description = "Check click on link I Forgot My Password")
