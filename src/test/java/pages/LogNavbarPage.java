@@ -156,7 +156,7 @@ public class LogNavbarPage extends BasePage {
 
     @Step("Click on to activity log add button")
     public void clickAddToActivityLogButton() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(ADD_TO_ACTIVITY_LOG_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("click on to activity log add button");

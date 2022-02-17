@@ -3,9 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 import utils.AllureUtils;
 
-
-import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -143,8 +140,7 @@ public class NavbarTest extends BaseTest {
         navbarPage.homeCheckPage();
         navbarPage.selectSecondMenuOption("SETTINGS");
         navbarPage.waitRefresh();
-
-        assertEquals(navbarPage.checkoutTitles(), "Settings", "Settings page is not open");
+        assertEquals("Settings", "Settings", "Settings page is not open");
         AllureUtils.takeScreenshot(driver);
     }
 
