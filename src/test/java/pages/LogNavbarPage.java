@@ -31,6 +31,13 @@ public class LogNavbarPage extends BasePage {
     @Step("Check popup")
     public boolean checkoutPopup() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(POPUP) && count < 5){
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(DROPDOWN).click();
+        }
         return driver.findElement(POPUP).isDisplayed();
     }
 
@@ -57,8 +64,12 @@ public class LogNavbarPage extends BasePage {
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
-        driver.navigate().refresh();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        if (!isExist(MOOD) && count < 5){
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
         return driver.findElement(MOOD).getText();
     }
 
@@ -99,6 +110,12 @@ public class LogNavbarPage extends BasePage {
 
     @Step("click on edit button")
     public void clickEditButton() {
+        if (!isExist(EDIT_BUTTON) && count < 5){
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
         driver.findElement(EDIT_BUTTON).click();
         log.info("click on edit button");
     }
