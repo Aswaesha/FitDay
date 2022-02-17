@@ -18,6 +18,19 @@ public class LoginPage extends BasePage {
     public static final By SING_UP_BUTTON = By.xpath("//input[@value='Sign Up']");
     public static final By ERROR_MASSAGE_NAME = By.xpath("//p[text()='Username is required.']");
     public static final By ERROR_MASSAGE_PASSWORD = By.xpath("//p[text()='Password is required.']");
+    private int count;
+
+    @Step("Check login page error")
+    public void checkLoginPage(String userName, String password) {
+        if (isExist(LOGIN_BUTTON) && count < 5) {
+            count++;
+            log.info("###### attempt number: " + count);
+            driver.navigate().refresh();
+            driver.findElement(USERNAME_INPUT).sendKeys(userName);
+            driver.findElement(PASSWORD_INPUT).sendKeys(password);
+            driver.findElement(LOGIN_BUTTON).click();
+        }
+    }
 
     @Step("Open login page")
     public LoginPage open() {
@@ -25,7 +38,7 @@ public class LoginPage extends BasePage {
         log.info("open page login");
         return this;
     }
-    private int count;
+
     @Step("Login process")
     public MainPage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
@@ -34,7 +47,7 @@ public class LoginPage extends BasePage {
         log.info("Enter password");
         driver.findElement(LOGIN_BUTTON).click();
         log.info("Click on login button");
-        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10){
+        if (!isExist(By.xpath(String.format(MAIN_ITEM_NAVBAR, "ARTICLES"))) && count < 10) {
             count++;
             log.info("###### attempt number: " + count);
             login(userName, password);
