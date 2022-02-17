@@ -18,34 +18,25 @@ public class NavbarPage extends BasePage {
     public static final String SIDE_ITEM_BUTTON_NAVBAR = "//ul[not(contains(@style, 'none'))]/li//a[text()='%s']";
 
     @Step("Click on items navbar")
-    public void selectMenuOption(String firstMenuOption,String secondMenuOption) {
+    public void selectMenuOption(String firstMenuOption, String secondMenuOption) {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         log.info("hover start");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
         action.moveToElement(we).build().perform();
 
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-driver.findElement(By.xpath("//div[@class='fd-submenu']")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//div[@class='fd-submenu']")).click();
         //((JavaScriptExecutor)webDriver).executeScript("arguments[0].scrollIntoView(true);", webElement);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",MAIN_ITEM_NAVBAR,firstMenuOption);
-////        if (!isExist(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))) && count2 < 10) {
-////            count2++;
-////            log.info("###### attempt2 number: " + count2);
-////            driver.navigate().refresh();
-////            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-////            WebElement we1 = driver.findElement(By.xpath(String.format(MAIN_ITEM_NAVBAR, firstMenuOption)));
-////            action.moveToElement(we1).build().perform();
-////        }
-////        log.info("hover finish and start click");
-       driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
+
+        driver.findElement(By.xpath(String.format(SIDE_ITEM_BUTTON_NAVBAR, secondMenuOption))).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("finish click");
     }
 
-    //private int count;
-    private int count2;
+//    //private int count;
+//    private int count2;
+
     //    @Step("Click on items navbar")
 //    public void selectSecondMenuOption(String secondMenuOption){
 //        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", SIDE_ITEM_BUTTON_NAVBAR);
