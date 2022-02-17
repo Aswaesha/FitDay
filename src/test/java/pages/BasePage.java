@@ -11,7 +11,6 @@ public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static final By HEADER_MENU = By.id("header-menu");
     public static final String BASE_URL = "https://www.fitday.com";
     public static final By TITLE = By.xpath("//h1[text()='JOIN FITDAY']");
     public static final By LOGIN_BUTTON = By.xpath("//input[@name='login']");
