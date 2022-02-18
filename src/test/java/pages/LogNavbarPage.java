@@ -67,7 +67,7 @@ public class LogNavbarPage extends BasePage {
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
-        if (!isExist(MOOD) && count < 15) {
+        if (!isExist(MOOD) && count < 20) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
