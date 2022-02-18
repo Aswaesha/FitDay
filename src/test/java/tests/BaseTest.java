@@ -77,7 +77,6 @@ public abstract class BaseTest {
         navbarPage = new NavbarPage(driver);
         logNavbarPage = new LogNavbarPage(driver);
         premiumPackagePage = new PremiumPackagePage(driver);
-
     }
 
     @AfterMethod(alwaysRun = true)
