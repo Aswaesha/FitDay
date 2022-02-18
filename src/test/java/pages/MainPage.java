@@ -70,8 +70,8 @@ public class MainPage extends BasePage {
 
     @Step("click on fitness  at learn more")
     public void listClickOnFitness() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(FITNESS_LINK) && count < 5) {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        if (!isExist(FITNESS_LINK) && count < 20) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();

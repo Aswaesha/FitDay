@@ -67,11 +67,12 @@ public class LogNavbarPage extends BasePage {
     @Step("Check mood diary")
     public String checkoutTextMood() {
         log.info("get mood");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         if (!isExist(MOOD) && count < 20) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
         return driver.findElement(MOOD).getText();
     }
