@@ -102,7 +102,7 @@ public class MainPage extends BasePage {
     public String getTextTitleOfPage() {
         log.info("get error message for titles");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        if (!isExist(TITLE_CATEGORIES) && count < 5) {
+        if (!isExist(TITLE_CATEGORIES) && count < 20) {
             count++;
             log.info("###### attempt number: " + count);
             driver.navigate().refresh();
