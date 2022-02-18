@@ -140,7 +140,7 @@ public class NavbarTest extends BaseTest {
         navbarPage.homeCheckPage();
         navbarPage.selectSecondMenuOption("SETTINGS");
         navbarPage.waitRefresh();
-        assertEquals("Settings", "Settings", "Settings page is not open");
+        assertEquals(navbarPage.checkoutTitles(), "Settings", "Settings page is not open");
         AllureUtils.takeScreenshot(driver);
     }
 
